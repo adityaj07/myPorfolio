@@ -71,7 +71,7 @@ const Page: FC = () => {
             ]}
           />
         </div>
-        <h1 className="text-2xl md:text-4xl mb-4 md:mb-6 text-white font-semibold relative bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500">
+        <h1 className="text-3xl md:text-4xl mb-4 md:mb-6 text-white font-semibold relative bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500">
           Links
         </h1>
         <div className="link__container rounded-lg p-[1px] my-2 w-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-slate-900 via-purple-900 to-slate-900">
@@ -81,7 +81,7 @@ const Page: FC = () => {
                 className="px-4 py-4 text-lg rounded-lg bg-[#26262A] hover:bg-[#101012] cursor-pointer transition-colors duration-150 shadow-[0_3px_10px_rgb(0,0,0,0.2)]"
                 key={linkObj.name}
               >
-                <Link href={linkObj.link} target="_blank">
+                <Link href={linkObj.link} target="_blank" className="text-sm md:text-lg">
                   <div className="flex items-center space-x-2">
                     {linkObj.icon}
                     <span className="leading-6">
