@@ -34,7 +34,7 @@ const AboutMe: FC<AboutMeProps> = ({}) => {
             <div className="border-b md:border-none w-[33%] mt-[0.2rem] mx-auto"></div>
           </h2>
           <p className="text-[0.925rem] md:text-base">
-          Hey, I'm Aditya Joshi, a passionate full-stack web developer dedicated to turning ideas into dynamic digital experiences. I thrive on the challenges of turning ideas into dynamic digital experiences. Beyond the screen, I explore new technologies and enjoy the ever-evolving landscape of web development. 
+          Hey, I&apos;m Aditya Joshi, a passionate full-stack web developer dedicated to turning ideas into dynamic digital experiences. I thrive on the challenges of turning ideas into dynamic digital experiences. Beyond the screen, I explore new technologies and enjoy the ever-evolving landscape of web development. 
           Let&apos;s connect and explore the endless possibilities together!
           </p>
           <div className="grid grid-cols-2 md:flex justify-start items-center gap-4 mt-6">
