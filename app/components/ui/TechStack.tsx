@@ -31,7 +31,7 @@ const TechStack: FC<TechStackProps> = ({}) => {
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {languages.map((language) => (
-              <div className="flex gap-2 rounded-md px-6 py-4 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] hover:bg-[#393939c5] transition-colors duration-150">
+              <div key={language.name} className="flex gap-2 rounded-md px-6 py-4 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] hover:bg-[#393939c5] transition-colors duration-150">
                 <div className="flex justify-center items-start w-[40%]">
                   <Image
                     src={language.img}
@@ -59,7 +59,7 @@ const TechStack: FC<TechStackProps> = ({}) => {
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {frontend.map((frontendItem) => (
-              <div className="flex gap-2 rounded-md px-6 py-4 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] hover:bg-[#393939c5] transition-colors duration-150">
+              <div key={frontendItem.name} className="flex gap-2 rounded-md px-6 py-4 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] hover:bg-[#393939c5] transition-colors duration-150">
                 <div className="flex justify-center items-start w-[40%]">
                   <Image
                     src={frontendItem.img}
@@ -87,7 +87,7 @@ const TechStack: FC<TechStackProps> = ({}) => {
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {backend.map((backendItem) => (
-              <div className="flex gap-2 rounded-md px-6 py-4 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] hover:bg-[#393939c5] transition-colors duration-150">
+              <div key={backendItem.name} className="flex gap-2 rounded-md px-6 py-4 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] hover:bg-[#393939c5] transition-colors duration-150">
                 <div className="flex justify-center items-start w-[40%]">
                   <Image
                     src={backendItem.img}
@@ -115,7 +115,7 @@ const TechStack: FC<TechStackProps> = ({}) => {
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {other.map((otherItem) => (
-              <div className="flex gap-2 rounded-md px-6 py-4 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] hover:bg-[#393939c5] transition-colors duration-150">
+              <div key={otherItem.name} className="flex gap-2 rounded-md px-6 py-4 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] hover:bg-[#393939c5] transition-colors duration-150">
                 <div className="flex justify-center items-start w-[40%]">
                   <Image
                     src={otherItem.img}
