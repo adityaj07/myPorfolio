@@ -10,7 +10,7 @@ const Hero: FC = () => {
       <BackgroundImage />
       <div className="h-[45rem] w-full relative flex items-center justify-center flex-col">
         <p className="text-[2.80rem] md:text-7xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-5 w-[90%] md:w-[70%] text-center">
-          Hello, I'm Aditya
+          Hello, I&apos;m Aditya
         </p>
         <p className="text-[1.3rem] md:text-xl relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 pb-2 md:py-3 w-[70%] text-center">
           A Full Stack Web Developer

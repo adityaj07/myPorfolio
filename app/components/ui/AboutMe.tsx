@@ -35,7 +35,7 @@ const AboutMe: FC<AboutMeProps> = ({}) => {
           </h2>
           <p className="text-[0.925rem] md:text-base">
           Hey, I'm Aditya Joshi, a passionate full-stack web developer dedicated to turning ideas into dynamic digital experiences. I thrive on the challenges of turning ideas into dynamic digital experiences. Beyond the screen, I explore new technologies and enjoy the ever-evolving landscape of web development. 
-          Let's connect and explore the endless possibilities together!
+          Let&apos;s connect and explore the endless possibilities together!
           </p>
           <div className="grid grid-cols-2 md:flex justify-start items-center gap-4 mt-6">
             <SocialBadge name="Github" link="https://github.com/adityaj07" icon={<FaGithub className="w-5 h-5"/>}/>
