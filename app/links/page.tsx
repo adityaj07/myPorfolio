@@ -57,7 +57,7 @@ const links = [
 
 const Page: FC = () => {
   return (
-    <div className="w-full h-screen md:h-[88.5vh]">
+    <div className="w-full h-screen md:h-[49.5rem]">
       <div className="flex flex-col w-[90%] gap-4 md:w-3/5 mx-auto ">
         <div className="mt-10 md:mt-0">
           <Breadcrumbs

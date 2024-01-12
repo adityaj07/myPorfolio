@@ -106,3 +106,52 @@ export const other = [
         img:"/logos/ubuntu-4.svg"
     },
 ]
+
+
+export const projects = [
+    {
+        name: "My Portfolio",
+        desc:"The website you are currently on.",
+        liveLink:"https://adityaj07-portfolio.vercel.app",
+        githubLink:"https://github.com/adityaj07/myPortfolio",
+        coverImg:"/projects/project-portfolio.png",
+        imgs:[],
+        tech:["/logos/next-js.svg", "/logos/tailwind-css-2.svg", "/logos/ts-logo-128.svg", "/logos/zod.svg"],
+    },
+    {
+        name: "Healthsynx",
+        desc:"HealthSynx is an innovative health and fitness tracker web application that empowers users to lead healthier lives. With clean and sleek design, goal setting, HealthSynx provides comprehensive insights and tracking capabilities.",
+        liveLink:"",
+        githubLink:"https://github.com/adityaj07/healthsynx",
+        coverImg:"/projects/project-healthsynx.png",
+        imgs:[],
+        tech:["/logos/react-2.svg", "/logos/tailwind-css-2.svg", "/logos/nodejs-1.svg", "/logos/expressjs-109.svg","/logos/mongodb-icon-2.svg"],
+    },
+    {
+        name: "Databiz Landing Page",
+        desc:"dataBiz is a website landing page built with React and Tailwind Css. It also uses react-icons and react-typed libraries.",
+        liveLink:"https://databiz.netlify.app/",
+        githubLink:"https://github.com/adityaj07/dataBiz",
+        coverImg:"/projects/project-databiz.png",
+        imgs:[],
+        tech:["/logos/react-2.svg", "/logos/tailwind-css-2.svg"],
+    },
+    {
+        name: "Ecolife",
+        desc:"EcoLife is a sustainable living website that I built as a project while learning Astro and as a part of my college project.",
+        liveLink:"https://ecoolife.netlify.app/",
+        githubLink:"https://github.com/adityaj07/EcoLife",
+        coverImg:"/projects/project-ecolife.png",
+        imgs:[],
+        tech:[],
+    },
+    {
+        name: "Lofiflow",
+        desc:"LofiFlow is a webapp where you can listen to lofi music while you code.",
+        liveLink:"https://lofiflow.netlify.app/",
+        githubLink:"",
+        coverImg:"/projects/project-lofiflow.png",
+        imgs:[],
+        tech:["/logos/logo-javascript.svg", "/logos/tailwind-css-2.svg"],
+    },
+]
