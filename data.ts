@@ -119,7 +119,7 @@ export const projects = [
         name: "My Portfolio",
         desc:"The website you are currently on.",
         liveLink:"https://adityaj07-portfolio.vercel.app",
-        githubLink:"https://github.com/adityaj07/myPortfolio",
+        githubLink:"https://github.com/adityaj07/myPorfolio",
         coverImg:"/projects/project-portfolio.png",
         imgs:[],
         tech:["/logos/next-js.svg", "/logos/tailwind-css-2.svg", "/logos/ts-logo-128.svg", "/logos/zod.svg"],
