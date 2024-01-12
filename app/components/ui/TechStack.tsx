@@ -25,13 +25,13 @@ const TechStack: FC<TechStackProps> = ({}) => {
       <div
         className="flex flex-col gap-6 w-full" 
       >
-        <div className="flex flex-col gap-2 rounded-md px-6 py-4 md:px-8 md:py-6 border-[1px] border-zinc-500 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] bg-[#121312]">
+        <div className="flex flex-col gap-2 rounded-md px-6 py-4 md:px-8 md:py-6 border border-zinc-500/40 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] bg-[#121312]">
           <h3 className="mb-4 text-lg font-medium inline-flex gap-1 items-center tracking-tighter text-[clamp(.875rem,5vw,1.125rem)] leading-none">
             Programming languages
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {languages.map((language) => (
-              <div key={language.name} className="flex gap-4 rounded-md px-6 py-4 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] hover:bg-[#393939c5] transition-colors duration-150">
+              <div key={language.name} className="flex gap-4 rounded-md px-6 py-4 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] hover:bg-[#393939c5] transition-colors duration-150 border border-zinc-800/60">
                 <span className="relative flex shrink-0 overflow-hidden w-10 h-10 rounded-lg object-contain">
                   <Image
                     src={language.img}
@@ -53,13 +53,13 @@ const TechStack: FC<TechStackProps> = ({}) => {
           </div>
         </div>
 
-        <div className="flex flex-col gap-2 rounded-md px-6 py-4 md:px-8 md:py-6 border-[1px] border-zinc-500 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] bg-[#121312]">
+        <div className="flex flex-col gap-2 rounded-md px-6 py-4 md:px-8 md:py-6 border border-zinc-500/40 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] bg-[#121312]">
           <h3 className="mb-4 text-lg font-medium inline-flex gap-1 items-center tracking-tighter text-[clamp(.875rem,5vw,1.125rem)] leading-none">
             Frontend
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {frontend.map((frontendItem) => (
-              <div key={frontendItem.name} className="flex gap-4 rounded-md px-6 py-4 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] hover:bg-[#393939c5] transition-colors duration-150">
+              <div key={frontendItem.name} className="flex gap-4 rounded-md px-6 py-4 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] hover:bg-[#393939c5] transition-colors duration-150 border border-zinc-800/60">
                 <span className="relative flex shrink-0 overflow-hidden w-10 h-10 rounded-lg object-contain">
                   <Image
                     src={frontendItem.img}
@@ -81,13 +81,13 @@ const TechStack: FC<TechStackProps> = ({}) => {
           </div>
         </div>
 
-        <div className="flex flex-col gap-2 rounded-md px-6 py-4 md:px-8 md:py-6 border-[1px] border-zinc-500 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] bg-[#121312]">
+        <div className="flex flex-col gap-2 rounded-md px-6 py-4 md:px-8 md:py-6 border border-zinc-500/40 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] bg-[#121312]">
           <h3 className="mb-4 text-lg font-medium inline-flex gap-1 items-center tracking-tighter text-[clamp(.875rem,5vw,1.125rem)] leading-none">
             Backend
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {backend.map((backendItem) => (
-              <div key={backendItem.name} className="flex gap-4 rounded-md px-6 py-4 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] hover:bg-[#393939c5] transition-colors duration-150">
+              <div key={backendItem.name} className="flex gap-4 rounded-md px-6 py-4 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] hover:bg-[#393939c5] transition-colors duration-150 border border-zinc-800/60">
                 <span className="relative flex shrink-0 overflow-hidden w-10 h-10 rounded-lg object-contain">
                   <Image
                     src={backendItem.img}
@@ -110,13 +110,13 @@ const TechStack: FC<TechStackProps> = ({}) => {
         </div>
 
 
-        <div className="flex flex-col gap-2 rounded-md px-6 py-4 md:px-8 md:py-6 border-[1px] border-zinc-500 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] bg-[#121312]">
+        <div className="flex flex-col gap-2 rounded-md px-6 py-4 md:px-8 md:py-6 border border-zinc-500/40 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] bg-[#121312]">
           <h3 className="mb-4 text-lg font-medium inline-flex gap-1 items-center tracking-tighter text-[clamp(.875rem,5vw,1.125rem)] leading-none">
             Others
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {other.map((otherItem) => (
-              <div key={otherItem.name} className="flex gap-4 rounded-md px-6 py-4 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] hover:bg-[#393939c5] transition-colors duration-150">
+              <div key={otherItem.name} className="flex gap-4 rounded-md px-6 py-4 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] hover:bg-[#393939c5] transition-colors duration-150 border border-zinc-800/60">
                 <span className="relative flex shrink-0 overflow-hidden w-10 h-10 rounded-lg object-contain">
                   <Image
                     src={otherItem.img}

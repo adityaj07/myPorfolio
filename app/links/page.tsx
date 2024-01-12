@@ -71,7 +71,7 @@ const Page: FC = () => {
             ]}
           />
         </div>
-        <h1 className="text-3xl md:text-4xl mb-4 md:mb-6 text-white font-semibold relative bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 inline-flex gap-1 items-center tracking-tighter text-[clamp(2.5rem,5vw,3rem)] leading-none border-b pb-4">
+        <h1 className="text-3xl md:text-4xl mb-4 md:mb-6 font-semibold relative inline-flex gap-1 items-center tracking-tighter text-[clamp(2.5rem,5vw,3rem)] leading-none border-b border-zinc-600/40 pb-4">
           Links
         </h1>
         <div className="link__container rounded-lg p-[1px] my-2 w-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-slate-900 via-purple-900 to-slate-900">

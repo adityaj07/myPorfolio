@@ -80,7 +80,7 @@ const page: FC = () => {
       </div>
      
 
-    <h1 className='text-2xl mb-4 md:mb-6 text-white font-semibold md:text-3xl relativ border-b pb-4 inline-flex gap-1 items-center tracking-tighter text-[clamp(2.5rem,5vw,3rem)] leading-none w-full'>Pictures from my recent trips</h1>
+    <h1 className='text-2xl mb-4 md:mb-6 text-white font-semibold md:text-3xl relative border-b border-zinc-600/40 pb-4 inline-flex gap-1 items-center tracking-tighter text-[clamp(2.5rem,5vw,3rem)] leading-none w-full'>Pictures from my recent trips</h1>
     <div className="columns-1xs md:columns-2xs lg:columns-3xs gap-4 mb-32 md:mb-0 ">
       {locations.map((location, index) => (
         <div key={index} className="flex flex-col gap-4 ">
