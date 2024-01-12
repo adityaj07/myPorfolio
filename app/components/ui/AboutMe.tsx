@@ -28,12 +28,11 @@ const AboutMe: FC<AboutMeProps> = ({}) => {
           />
           
         </div>
-        <div className="flex flex-col">
-          <h2 className="text-xl mb-4 md:mb-6 text-white font-medium md:text-2xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 text-center md:text-start inline md:border-b md:w-[18%]">
+        <div className="flex flex-col items-center md:items-start">
+          <h2 className="font-semibold gap-1 text-center md:items-start tracking-tighter text-[clamp(1rem,5vw,1.5rem)] leading-none inline-flex mb-4 border-b w-fit pb-2">
             About me
-            <div className="border-b md:border-none w-[33%] mt-[0.2rem] mx-auto"></div>
           </h2>
-          <p className="text-[0.925rem] md:text-base">
+          <p className="font-normal items-center tracking-wide text-base md:text-sm leading-normal">
           Hey, I&apos;m Aditya Joshi, a passionate full-stack web developer dedicated to turning ideas into dynamic digital experiences. I thrive on the challenges of turning ideas into dynamic digital experiences. Beyond the screen, I explore new technologies and enjoy the ever-evolving landscape of web development. 
           Let&apos;s connect and explore the endless possibilities together!
           </p>

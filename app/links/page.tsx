@@ -58,7 +58,7 @@ const links = [
 const Page: FC = () => {
   return (
     <div className="w-full h-screen md:h-[88.5vh]">
-      <div className="flex flex-col w-[80%] gap-4 md:w-3/5 mx-auto ">
+      <div className="flex flex-col w-[90%] gap-4 md:w-3/5 mx-auto ">
         <div className="mt-10 md:mt-0">
           <Breadcrumbs
             breadcrumbs={[
@@ -71,7 +71,7 @@ const Page: FC = () => {
             ]}
           />
         </div>
-        <h1 className="text-3xl md:text-4xl mb-4 md:mb-6 text-white font-semibold relative bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500">
+        <h1 className="text-3xl md:text-4xl mb-4 md:mb-6 text-white font-semibold relative bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 inline-flex gap-1 items-center tracking-tighter text-[clamp(2.5rem,5vw,3rem)] leading-none border-b pb-4">
           Links
         </h1>
         <div className="link__container rounded-lg p-[1px] my-2 w-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-slate-900 via-purple-900 to-slate-900">
