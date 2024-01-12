@@ -56,6 +56,12 @@ export const frontend = [
         link:"https://ui.shadcn.com/",
         img:"/logos/shadcn.jpeg"
     },
+    {
+        name:"Astro",
+        desc:"Astro is the web framework for building content-driven websites like blogs, marketing, and e-commerce.",
+        link:"https://astro.build/",
+        img:"/logos/astro.svg"
+    },
     
 ]
 

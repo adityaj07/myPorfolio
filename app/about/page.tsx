@@ -9,7 +9,7 @@ interface pageProps {
 
 const page: FC<pageProps> = ({}) => {
   return (
-    <div className=' w-[90%] lg:w-[60%] lg:p-12 mx-auto'>
+    <div className=' w-[90%] lg:w-[60%] lg:p-12 mx-auto mb-24'>
       <div className='mt-10 md:mt-0'>
        <Breadcrumbs
         breadcrumbs={[
