@@ -1,12 +1,10 @@
 "use client"
 
-import { FC } from "react";
 import Breadcrumbs from "../components/BreadCrumbs";
 import { useForm } from "react-hook-form";
 
-interface pageProps {}
 
-const page: FC<pageProps> = ({}) => {
+const page= () => {
   const {
     register,
     handleSubmit,
@@ -58,6 +56,7 @@ const page: FC<pageProps> = ({}) => {
           <button type="submit" className="flex justify-center items-center gap-2 rounded-md px-3 py-2 bg-[#333333] border border-zinc-500/10 hover:bg-white transition-colors duration-150 text-white hover:text-black shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] w-full font-normal tracking-tighter text-[clamp(.875rem,5vw,1.125rem)] leading-none">Send Message</button>
         </form>
       </div>
+      
     </div>
   );
 };
