@@ -18,7 +18,7 @@ const Projects: FC<ProjectsProps> = ({}) => {
       {projects.map((project) => (
         <div
           key={project.name}
-          className="flex flex-col gap-4 rounded-md  shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] hover:bg-[#393939c5] transition-colors duration-150 border border-zinc-800/60"
+          className="flex flex-col gap-4 rounded-md  shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] hover:bg-[#393939c5] transition-colors duration-150 border border-zinc-800/60 p-2 md:p-3"
         >
           <div className="relative flex overflow-hidden  rounded-lg object-contain h-fit">
             <Image
@@ -30,7 +30,7 @@ const Projects: FC<ProjectsProps> = ({}) => {
             />
           </div>
 
-          <div className="flex flex-col gap-2 px-6 py-4">
+          <div className="flex flex-col gap-2 px-4 py-2">
             <div className="flex justify-between items-center mb-4">
               <h2 className="font-bold inline-flex gap-1 items-center tracking-tighter text-[clamp(.875rem,5vw,1.125rem)] leading-none ">
                 {project.name}
