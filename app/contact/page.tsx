@@ -1,21 +1,75 @@
-"use client"
+"use client";
 
+import { zodResolver } from "@hookform/resolvers/zod";
 import Breadcrumbs from "../components/BreadCrumbs";
 import { useForm } from "react-hook-form";
 
+import { contactFormSchema, TContactFormSchema } from "../lib/types";
+import { sendEmail } from "../utils/sendEmail";
+import toast, { Toaster } from "react-hot-toast";
+import Image from "next/image";
 
-const Page= () => {
+const Page = () => {
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
     setError,
-  } = useForm();
+    reset,
+  } = useForm<TContactFormSchema>({
+    resolver: zodResolver(contactFormSchema),
+  });
 
-  const onSubmit = () => {};
+  const onSubmit = async (data: TContactFormSchema) => {
+    const resData = await sendEmail(data);
+
+    if (resData.success) {
+      reset();
+      toast.success(`${resData.message}. Thanks for reaching out!`, {
+        style: {
+          background: "black",
+          border: "1px solid #2F2F32",
+          padding: "16px",
+          color: "white",
+        },
+      });
+    } else {
+      toast.error(resData.message, {
+        style: {
+          background: "black",
+          border: "1px solid #2F2F32",
+          padding: "16px",
+          color: "white",
+        },
+      });
+    }
+
+    if (resData.errors) {
+      const errors = resData.errors;
+      if (errors.name) {
+        setError("name", {
+          type: "server",
+          message: errors.name,
+        });
+      } else if (errors.email) {
+        setError("email", {
+          type: "server",
+          message: errors.email,
+        });
+      } else if (errors.message) {
+        setError("message", {
+          type: "server",
+          message: errors.message,
+        });
+      } else {
+        alert("something went wrong");
+      }
+    }
+  };
 
   return (
-    <div className=" w-[90%] lg:w-[60%] lg:p-12 mx-auto h-[49.5rem]">
+    <div className=" w-[90%] lg:w-[60%] lg:p-12 mx-auto h-[49.5rem] mb-24 md:mb-0">
+      <Toaster position="bottom-center" />
       <div className="mt-10 md:mt-0">
         <Breadcrumbs
           breadcrumbs={[
@@ -37,26 +91,81 @@ const Page= () => {
         <h3 className="mb-4 text-lg font-medium inline-flex gap-1 items-center tracking-tighter text-[clamp(.875rem,5vw,1.125rem)] leading-none">
           Send a message
         </h3>
-        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4 md:gap-6">
-          <div className="flex flex-col md:flex-row gap-4 md:gap-6">
-            <input
-              {...register("name")}
-              type="text"
-              placeholder="Name"
-              className="w-full px-3 py-1 border rounded-md border-zinc-500/20 bg-transparent  transition-colors outline-none shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]"
-            />
-            <input
-              {...register("email")}
-              type="email"
-              placeholder="Email"
-              className="w-full px-3 py-1 border rounded-md  border-zinc-500/20  bg-transparent  transition-colors outline-none shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]"
-            />
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="flex flex-col gap-6 md:gap-4"
+        >
+          <div className="flex flex-col md:flex-row gap-8 md:gap-6 justify-between items-center mb-8">
+            <div className="flex flex-col gap-1 w-full relative">
+              <input
+                {...register("name", { required: true })}
+                type="text"
+                placeholder="Name"
+                className="px-4 py-2 md:px-3 md:py-1 border rounded-md border-zinc-500/20 bg-transparent transition-colors outline-none shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]"
+              />
+              <p
+                className={`text-red-500 text-[clamp(.75rem,1.5vw,.875rem)] line-clamp-2 max-w-xs absolute -bottom-5 md:-bottom-6 left-0 w-full ${
+                  errors.name ? "visible" : "invisible"
+                }`}
+              >
+                {`${errors.name ? errors.name.message : "\u00A0"}`}
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-1 w-full relative">
+              <input
+                {...register("email", { required: true })}
+                type="email"
+                placeholder="Email"
+                className="px-4 py-2 md:px-3 md:py-1 border rounded-md border-zinc-500/20 bg-transparent transition-colors outline-none shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]"
+              />
+              <p
+                className={`text-red-500 text-[clamp(.75rem,1.5vw,.875rem)] line-clamp-2 max-w-xs absolute -bottom-5 md:-bottom-6 left-0 w-full ${
+                  errors.email ? "visible" : "invisible"
+                }`}
+              >
+                {`${errors.email ? errors.email.message : "\u00A0"}`}
+              </p>
+            </div>
           </div>
-          <textarea name="msg" className="w-full px-3 py-1 border rounded-md border-zinc-500/20 bg-transparent transition-colors outline-none shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]" placeholder="Any ideas/project to discuss" rows={12} />
-          <button type="submit" className="flex justify-center items-center gap-2 rounded-md px-3 py-2 bg-[#333333] border border-zinc-500/10 hover:bg-white transition-colors duration-150 text-white hover:text-black shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] w-full font-normal tracking-tighter text-[clamp(.875rem,5vw,1.125rem)] leading-none">Send Message</button>
+          <div className="relative mb-6">
+            <textarea
+              {...register("message", { required: true })}
+              className="w-full px-4 py-2 md:px-3 md:py-1 border rounded-md border-zinc-500/20 bg-transparent transition-colors outline-none shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]"
+              placeholder="Any ideas/project to discuss"
+              rows={12}
+            />
+            <p
+              className={`text-red-500 text-[clamp(.75rem,1.5vw,.875rem)] line-clamp-2 max-w-xs absolute -bottom-5 md:-bottom-6 left-0 w-full ${
+                errors.message ? "visible" : "invisible"
+              }`}
+            >
+              {`${errors.message ? errors.message.message : "\u00A0"}`}
+            </p>
+          </div>
+
+          <button
+            type="submit"
+            className={`flex justify-center items-center gap-2 rounded-md px-3 py-2 bg-[#333333] border border-zinc-500/10 hover:bg-white transition-colors duration-150 text-white hover:text-black shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] w-full font-normal tracking-tighter text-[clamp(.875rem,5vw,1.125rem)] leading-none ${
+              isSubmitting ? "bg-[#333333] hover:bg-[#333333] hover:text-white" : ""
+            }`}
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? (
+              <div className="flex gap-1 md:gap-2 justify-center items-center">
+                <div
+                  className="animate-spin inline-block w-5 h-5 border-[3px] border-current border-t-transparent text-white rounded-full"
+                  role="status"
+                  aria-label="loading"
+                ></div>
+                <span>Sending...</span>
+              </div>
+            ) : (
+              "Send Message"
+            )}
+          </button>
         </form>
       </div>
-      
     </div>
   );
 };
