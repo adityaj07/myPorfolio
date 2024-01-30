@@ -3,11 +3,10 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import Breadcrumbs from "../components/BreadCrumbs";
 import { useForm } from "react-hook-form";
-
 import { contactFormSchema, TContactFormSchema } from "../lib/types";
 import { sendEmail } from "../utils/sendEmail";
 import toast, { Toaster } from "react-hot-toast";
-import Image from "next/image";
+
 
 const Page = () => {
   const {
@@ -68,7 +67,7 @@ const Page = () => {
   };
 
   return (
-    <div className=" w-[90%] lg:w-[60%] lg:p-12 mx-auto h-[49.5rem] mb-24 md:mb-0">
+    <div className=" w-[90%] lg:w-[60%] lg:p-12 mx-auto mb-24 md:mb-0 ">
       <Toaster position="bottom-center" />
       <div className="mt-10 md:mt-0">
         <Breadcrumbs
