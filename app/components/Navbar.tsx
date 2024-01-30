@@ -26,8 +26,8 @@ const links: NavLink[] = [
 const Navbar: FC = () => {
   return (
     <nav className="z-[20] fixed bottom-0 left-[1.5rem] right-[1.5rem] md:sticky md:top-0 md:block md:w-[40%] py-6 lg:w-[20%] mx-auto">
-      <div className=" p-[1px] pointer-events-auto rounded-full  text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
-        <ul className="flex items-center justify-between py-4 px-6 rounded-full text-white/90  text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1  backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 ring-white/10">
+      <div className=" p-[1px] pointer-events-auto rounded-full  text-sm font-medium text-zinc-200 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
+        <ul className="flex items-center justify-between py-4 px-6 rounded-full text-white/90  text-sm font-medium text-zinc-200 shadow-lg shadow-zinc-800/5 ring-1  backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 ring-white/10">
           {links.map((link) => (
             <li key={link.path}>
               <Link href={link.path} passHref>
