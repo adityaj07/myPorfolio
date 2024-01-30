@@ -90,7 +90,7 @@ const Page = () => {
       </h1>
 
       <div className="flex flex-col gap-3 ">
-        <SocialBadge name="WhatsApp" icon={<FaWhatsapp className="w-5 h-5"/>} link={`https://wa.me/${process.env.MY_NUM}`} className="bg-[#24D367] hover:text-[#103829] duration-150"/>
+        <SocialBadge name="WhatsApp" icon={<FaWhatsapp className="w-5 h-5"/>} link={`https://wa.me/${process.env.MY_NUM}?text=Hello%21%20I%27d%20love%20to%20connect%20and%20discuss%20a%20potential%20collaboration%2Fproject.%20Looking%20forward%20to%20hearing%20from%20you%21`} className="bg-[#24D367] hover:text-[#103829] duration-150"/>
       </div>
 
      
