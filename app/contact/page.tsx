@@ -6,6 +6,8 @@ import { useForm } from "react-hook-form";
 import { contactFormSchema, TContactFormSchema } from "../lib/types";
 import { sendEmail } from "../utils/sendEmail";
 import toast, { Toaster } from "react-hot-toast";
+import SocialBadge from "../components/ui/SocialBadge";
+import { FaWhatsapp } from "react-icons/fa6";
 
 
 const Page = () => {
@@ -82,11 +84,18 @@ const Page = () => {
         />
       </div>
 
-      <h1 className="text-2xl mb-4 md:mb-6 text-white font-semibold md:text-3xl relative border-b border-zinc-600/40 pb-4 inline-flex gap-1 items-center tracking-tighter text-[clamp(2.5rem,5vw,3rem)] leading-none w-full">
+      <h1 className="text-2xl mb-4 md:mb-6 text-white font-semibold md:text-3xl relative border-b border-zinc-600/40 pb-4 inline-flex flex-col gap-1  tracking-tighter text-[clamp(2.5rem,5vw,3rem)] leading-none w-full">
         Let&apos;s build it together
+        <small className=""></small>
       </h1>
 
-      <div className="flex flex-col gap-2 rounded-md px-6 py-4 md:px-8 md:py-6 border-[1px] border-zinc-500/30 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] bg-[#121312]">
+      <div className="flex flex-col gap-3 ">
+        <SocialBadge name="WhatsApp" icon={<FaWhatsapp className="w-5 h-5"/>} link={`https://wa.me/${process.env.MY_NUM}`} className="bg-[#24D367] hover:text-[#103829] duration-150"/>
+      </div>
+
+     
+
+      <div className="mt-6 flex flex-col gap-2 rounded-md px-6 py-4 md:px-8 md:py-6 border-[1px] border-zinc-500/30 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] bg-[#121312]">
         <h3 className="mb-4 text-lg font-medium inline-flex gap-1 items-center tracking-tighter text-[clamp(.875rem,5vw,1.125rem)] leading-none">
           Send a message
         </h3>
