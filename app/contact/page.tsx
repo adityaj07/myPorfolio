@@ -8,7 +8,7 @@ import { sendEmail } from "../utils/sendEmail";
 import toast, { Toaster } from "react-hot-toast";
 import SocialBadge from "../components/ui/SocialBadge";
 import { FaWhatsapp } from "react-icons/fa6";
-
+import { motion } from "framer-motion";
 
 const Page = () => {
   const {
@@ -69,7 +69,12 @@ const Page = () => {
   };
 
   return (
-    <div className=" w-[90%] lg:w-[60%] lg:p-12 mx-auto mb-24 md:mb-0 ">
+    <motion.div
+      className=" w-[90%] lg:w-[60%] lg:p-12 mx-auto mb-24 md:mb-0 "
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
       <Toaster position="bottom-center" />
       <div className="mt-10 md:mt-0">
         <Breadcrumbs
@@ -90,10 +95,13 @@ const Page = () => {
       </h1>
 
       <div className="flex flex-col gap-3 ">
-        <SocialBadge name="WhatsApp" icon={<FaWhatsapp className="w-5 h-5"/>} link={`https://wa.me/${process.env.MY_NUM}?text=Hello%21%20I%27d%20love%20to%20connect%20and%20discuss%20a%20potential%20collaboration%2Fproject.%20Looking%20forward%20to%20hearing%20from%20you%21`} className="bg-[#24D367] hover:text-[#103829] duration-150"/>
+        <SocialBadge
+          name="WhatsApp"
+          icon={<FaWhatsapp className="w-5 h-5" />}
+          link={`https://wa.me/${process.env.MY_NUM}?text=Hello%21%20I%27d%20love%20to%20connect%20and%20discuss%20a%20potential%20collaboration%2Fproject.%20Looking%20forward%20to%20hearing%20from%20you%21`}
+          className="bg-[#24D367] hover:text-[#103829] duration-150"
+        />
       </div>
-
-     
 
       <div className="mt-6 flex flex-col gap-2 rounded-md px-6 py-4 md:px-8 md:py-6 border-[1px] border-zinc-500/30 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] bg-[#121312]">
         <h3 className="mb-4 text-lg font-medium inline-flex gap-1 items-center tracking-tighter text-[clamp(.875rem,5vw,1.125rem)] leading-none">
@@ -155,7 +163,9 @@ const Page = () => {
           <button
             type="submit"
             className={`flex justify-center items-center gap-2 rounded-md px-3 py-2 bg-[#333333] border border-zinc-500/10 hover:bg-white transition-colors duration-150 text-white hover:text-black shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] w-full font-normal tracking-tighter text-[clamp(.875rem,5vw,1.125rem)] leading-none ${
-              isSubmitting ? "bg-[#333333] hover:bg-[#333333] hover:text-white" : ""
+              isSubmitting
+                ? "bg-[#333333] hover:bg-[#333333] hover:text-white"
+                : ""
             }`}
             disabled={isSubmitting}
           >
@@ -174,7 +184,7 @@ const Page = () => {
           </button>
         </form>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

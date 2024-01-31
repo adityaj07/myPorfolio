@@ -4,7 +4,7 @@ import Image from "next/image";
 const BackgroundImage: FC = () => {
   return (
     <>
-    <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-black gradient-mask-t-0"></div>
+    <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-black gradient-mask-t-0 h-screen"></div>
     <Image
       src="/ooorganize.svg"
       fill

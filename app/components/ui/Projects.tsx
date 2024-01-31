@@ -18,7 +18,7 @@ const Projects: FC<ProjectsProps> = ({}) => {
       {projects.map((project) => (
         <div
           key={project.name}
-          className="flex flex-col gap-4 rounded-md  shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] hover:bg-[#393939c5] transition-colors duration-150 border border-zinc-800/60 p-2 md:p-3"
+          className="flex flex-col gap-4 rounded-[0.875rem]  shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] hover:bg-[#393939c5] transition-colors duration-150 border border-zinc-800/60 p-2 md:p-3"
         >
           <div className="relative flex overflow-hidden  rounded-lg object-contain h-fit">
             <Image
@@ -36,16 +36,20 @@ const Projects: FC<ProjectsProps> = ({}) => {
                 {project.name}
               </h2>
               <div className="flex justify-between items-center gap-2 text-sm">
-                {project.githubLink && <SocialBadge
-                  name="Github"
-                  link={project.githubLink}
-                  icon={<FaGithub className="w-5 h-5" />}
-                />}
-                {project.liveLink && <SocialBadge
-                  name="Live"
-                  link={project.liveLink}
-                  icon={<FaGlobe className="w-5 h-5" />}
-                />}
+                {project.githubLink && (
+                  <SocialBadge
+                    name="Github"
+                    link={project.githubLink}
+                    icon={<FaGithub className="w-5 h-5" />}
+                  />
+                )}
+                {project.liveLink && (
+                  <SocialBadge
+                    name="Live"
+                    link={project.liveLink}
+                    icon={<FaGlobe className="w-5 h-5" />}
+                  />
+                )}
               </div>
             </div>
 

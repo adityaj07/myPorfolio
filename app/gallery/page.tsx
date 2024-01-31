@@ -1,8 +1,11 @@
+"use client";
+
 import { FC, Suspense } from "react";
 import React from "react";
 import Image from "next/image";
 import Breadcrumbs from "../components/BreadCrumbs";
 import { ImageSkeleton } from "../components/ui/Skeletons";
+import { motion } from "framer-motion";
 
 const locations = [
   {
@@ -64,7 +67,12 @@ const locations = [
 
 const page: FC = () => {
   return (
-    <div className=" w-[90%] lg:w-[60%] lg:p-12 mx-auto ">
+    <motion.div
+      className=" w-[90%] lg:w-[60%] lg:p-12 mx-auto "
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
       <div className="mt-10 md:mt-0">
         <Breadcrumbs
           breadcrumbs={[
@@ -103,7 +111,7 @@ const page: FC = () => {
           </div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

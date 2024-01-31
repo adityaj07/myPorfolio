@@ -1,14 +1,12 @@
+"use client";
+
 import React, { FC } from "react";
 import Link from "next/link";
-import {
-  FaGithub,
-  FaDiscord,
-  FaLinkedin,
-  FaInstagram,
-} from "react-icons/fa";
+import { FaGithub, FaDiscord, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { TbSquareRoundedLetterP, TbBrandLeetcode } from "react-icons/tb";
 import Breadcrumbs from "../components/BreadCrumbs";
+import { motion } from "framer-motion";
 
 const links = [
   {
@@ -57,7 +55,12 @@ const links = [
 
 const Page: FC = () => {
   return (
-    <div className="w-full h-screen md:h-[49.5rem]">
+    <motion.div
+      className="w-full h-screen md:h-[49.5rem]"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
       <div className="flex flex-col w-[90%] gap-4 md:w-3/5 mx-auto ">
         <div className="mt-10 md:mt-0">
           <Breadcrumbs
@@ -81,7 +84,11 @@ const Page: FC = () => {
                 className="px-4 py-4 text-lg rounded-lg bg-[#26262A] hover:bg-[#101012] cursor-pointer transition-colors duration-150 shadow-[0_3px_10px_rgb(0,0,0,0.2)]"
                 key={linkObj.name}
               >
-                <Link href={linkObj.link} target="_blank" className="text-sm md:text-lg">
+                <Link
+                  href={linkObj.link}
+                  target="_blank"
+                  className="text-sm md:text-lg"
+                >
                   <div className="flex items-center space-x-2">
                     {linkObj.icon}
                     <span className="leading-6">
@@ -94,7 +101,7 @@ const Page: FC = () => {
           </ul>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
