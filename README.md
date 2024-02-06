@@ -23,7 +23,7 @@ My website leverages the power of various technologies:
 
 
 ### Get in Touch
-Have feedback, questions, or just want to say hi? Feel free to reach out to through the [contact form](https://adityaj07-portfolio.vercel.app/contact) on my portfolio website.
+Have feedback, questions, or just want to say hi? Feel free to reach out to through the [contact form](https://adityaj07-portfolio.vercel.app/contact) on my portfolio website or at joshiaditya.aj07@gmail.com
 
 
 #### Thank you for visiting this repository! Don't forget to star ⭐️ this project if you found it interesting or useful!
