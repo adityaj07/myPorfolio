@@ -94,14 +94,14 @@ const Page = () => {
         <small className=""></small>
       </h1>
 
-      <div className="flex flex-col gap-3 ">
+      {/* <div className="flex flex-col gap-3 ">
         <SocialBadge
           name="WhatsApp"
           icon={<FaWhatsapp className="w-5 h-5" />}
           link={`https://wa.me/${process.env.MY_NUM}?text=Hello%21%20I%27d%20love%20to%20connect%20and%20discuss%20a%20potential%20collaboration%2Fproject.%20Looking%20forward%20to%20hearing%20from%20you%21`}
           className="bg-[#24D367] hover:text-[#103829] duration-150"
         />
-      </div>
+      </div> */}
 
       <div className="mt-6 flex flex-col gap-2 rounded-md px-6 py-4 md:px-8 md:py-6 border-[1px] border-zinc-500/30 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] bg-[#121312]">
         <h3 className="mb-4 text-lg font-medium inline-flex gap-1 items-center tracking-tighter text-[clamp(.875rem,5vw,1.125rem)] leading-none">
