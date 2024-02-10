@@ -160,4 +160,13 @@ export const projects = [
         imgs:[],
         tech:["/logos/logo-javascript.svg", "/logos/tailwind-css-2.svg"],
     },
+    {
+        name: "Working on more ideas.🤓",
+        desc:"If you have any idea or want to get one built, reach out me.👀",
+        liveLink:"",
+        githubLink:"",
+        coverImg:"/projects/project-coming-soon.png",
+        imgs:[],
+        tech:["/logos/logo-javascript.svg", "/logos/tailwind-css-2.svg"],
+    },
 ]
