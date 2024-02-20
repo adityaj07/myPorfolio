@@ -116,6 +116,15 @@ export const other = [
 
 export const projects = [
     {
+        name: "FlowPay",
+        desc:"A Paytm-inspired payment platform facilitating user sign-up, seamless peer-to-peer transactions, and efficient user search functionalities for easy money transfers.",
+        liveLink:"https://flow-pay.vercel.app",
+        githubLink:"https://github.com/adityaj07/flowpay",
+        coverImg:"/projects/project-flowpay.jpg",
+        imgs:[],
+        tech:["/logos/next-js.svg", "/logos/tailwind-css-2.svg", "/logos/ts-logo-128.svg", "/logos/zod.svg"],
+    },
+    {
         name: "My Portfolio",
         desc:"The website you are currently on.",
         liveLink:"https://adityaj07-portfolio.vercel.app",
@@ -127,7 +136,7 @@ export const projects = [
     {
         name: "Healthsynx",
         desc:"HealthSynx is an innovative health and fitness tracker web application that empowers users to lead healthier lives. With clean and sleek design, goal setting, HealthSynx provides comprehensive insights and tracking capabilities.",
-        liveLink:"",
+        liveLink:"https://healthsynxx.vercel.app",
         githubLink:"https://github.com/adityaj07/healthsynx",
         coverImg:"/projects/project-healthsynx.png",
         imgs:[],
