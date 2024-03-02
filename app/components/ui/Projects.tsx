@@ -57,7 +57,7 @@ const Projects: FC<ProjectsProps> = ({}) => {
             </p>
             <div className="flex gap-3 items-center">
               {project.tech.map((proj) => (
-                <Image src={proj} alt={proj} width={20} height={20} />
+                <Image src={proj} alt={proj} width={20} height={20} key={proj}/>
               ))}
             </div>
           </div>
