@@ -122,7 +122,7 @@ export const projects = [
         githubLink:"https://github.com/adityaj07/flowpay",
         coverImg:"/projects/project-flowpay.jpg",
         imgs:[],
-        tech:["/logos/next-js.svg", "/logos/tailwind-css-2.svg", "/logos/ts-logo-128.svg", "/logos/zod.svg"],
+        tech:["/logos/react-2.svg", "/logos/tailwind-css-2.svg", "/logos/ts-logo-128.svg", "/logos/zod.svg", "/logos/nodejs-1.svg", "/logos/expressjs-109.svg","/logos/mongodb-icon-2.svg"],
     },
     {
         name: "My Portfolio",
@@ -131,7 +131,7 @@ export const projects = [
         githubLink:"https://github.com/adityaj07/myPorfolio",
         coverImg:"/projects/project-portfolio.png",
         imgs:[],
-        tech:["/logos/next-js.svg", "/logos/tailwind-css-2.svg", "/logos/ts-logo-128.svg", "/logos/zod.svg"],
+        tech:["/logos/nextjs-13.svg", "/logos/tailwind-css-2.svg", "/logos/ts-logo-128.svg"],
     },
     {
         name: "Healthsynx",
@@ -158,7 +158,7 @@ export const projects = [
         githubLink:"https://github.com/adityaj07/EcoLife",
         coverImg:"/projects/project-ecolife.png",
         imgs:[],
-        tech:[],
+        tech:["/logos/astro.svg", "/logos/tailwind-css-2.svg"],
     },
     {
         name: "Lofiflow",
@@ -176,6 +176,6 @@ export const projects = [
         githubLink:"",
         coverImg:"/projects/project-coming-soon.png",
         imgs:[],
-        tech:["/logos/logo-javascript.svg", "/logos/tailwind-css-2.svg"],
+        tech:[],
     },
 ]

@@ -1,8 +1,10 @@
+"use client";
+
 import { projects } from "@/data";
 import Image from "next/image";
 import { FC } from "react";
-import SocialBadge from "./SocialBadge";
 import { FaGithub, FaGlobe } from "react-icons/fa";
+import Link from "next/link";
 
 interface ProjectsProps {}
 
@@ -35,20 +37,16 @@ const Projects: FC<ProjectsProps> = ({}) => {
               <h2 className="font-bold inline-flex gap-1 items-center tracking-tighter text-[clamp(.875rem,5vw,1.125rem)] leading-none ">
                 {project.name}
               </h2>
-              <div className="flex justify-between items-center gap-2 text-sm">
+              <div className="flex justify-between items-center gap-4 text-sm">
                 {project.githubLink && (
-                  <SocialBadge
-                    name="Github"
-                    link={project.githubLink}
-                    icon={<FaGithub className="w-5 h-5" />}
-                  />
+                  <Link href={project.liveLink} target="_blank">
+                    <FaGithub className="w-5 h-5" />
+                  </Link>
                 )}
                 {project.liveLink && (
-                  <SocialBadge
-                    name="Live"
-                    link={project.liveLink}
-                    icon={<FaGlobe className="w-5 h-5" />}
-                  />
+                  <Link href={project.liveLink} target="_blank">
+                    <FaGlobe className="w-5 h-5" />
+                  </Link>
                 )}
               </div>
             </div>
@@ -57,9 +55,11 @@ const Projects: FC<ProjectsProps> = ({}) => {
               {/* {trimDescriptionToWords(project.desc, 20)}... */}
               {project.desc}
             </p>
-            {/* <div className="flex gap-1">
-                
-            </div> */}
+            <div className="flex gap-3 items-center">
+              {project.tech.map((proj) => (
+                <Image src={proj} alt={proj} width={20} height={20} />
+              ))}
+            </div>
           </div>
         </div>
       ))}
