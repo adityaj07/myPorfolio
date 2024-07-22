@@ -29,8 +29,8 @@ const links = [
   },
   {
     name: "LinkedIn",
-    username: "aditya-joshi",
-    link: "https://www.linkedin.com/in/aditya-joshi",
+    username: "adityaj07",
+    link: "https://www.linkedin.com/in/adityaj07",
     icon: <FaLinkedin className="w-5 h-5" />,
   },
   {
