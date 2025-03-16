@@ -23,12 +23,6 @@ export const languages = [
     link: "https://www.python.org/",
     img: "/logos/python-5.svg",
   },
-  {
-    name: "Java",
-    desc: "Java is a versatile, object-oriented programming language celebrated for its platform independence. Widely applied in enterprise, mobile, and server-side development, Java is known for its robustness and strong community support.",
-    link: "https://www.java.com/en/",
-    img: "/logos/java-4.svg",
-  },
 ];
 
 export const frontend = [
@@ -45,7 +39,7 @@ export const frontend = [
     img: "/logos/next-js-white.svg",
   },
   {
-    name: "Tailwind Css",
+    name: "Tailwind CSS",
     desc: "Tailwind CSS is a utility-first CSS framework that streamlines web development. By providing a set of pre-designed utility classes, Tailwind simplifies styling and allows for rapid and consistent UI development.",
     link: "https://www.nextjs.org",
     img: "/logos/tailwind-css-2.svg",
@@ -57,10 +51,22 @@ export const frontend = [
     img: "/logos/shadcn.jpeg",
   },
   {
-    name: "Astro",
-    desc: "Astro is the web framework for building content-driven websites like blogs, marketing, and e-commerce.",
-    link: "https://astro.build/",
-    img: "/logos/astro.svg",
+    name: "Redux & RTK",
+    desc: "Shadcn is a collection of re-usable components that you can copy and paste into your apps.",
+    link: "https://redux-toolkit.js.org/",
+    img: "/logos/redux.svg",
+  },
+  {
+    name: "Zustand",
+    desc: "Shadcn is a collection of re-usable components that you can copy and paste into your apps.",
+    link: "https://zustand-demo.pmnd.rs/",
+    img: "/logos/zustand.svg",
+  },
+  {
+    name: "React query",
+    desc: "Shadcn is a collection of re-usable components that you can copy and paste into your apps.",
+    link: "https://tanstack.com/query",
+    img: "/logos/react-query.svg",
   },
 ];
 
@@ -78,16 +84,34 @@ export const backend = [
     img: "/logos/expressjs-109.svg",
   },
   {
+    name: "Honojs",
+    desc: "Shadcn is a collection of re-usable components that you can copy and paste into your apps.",
+    link: "https://expressjs.com/",
+    img: "/logos/hono.svg",
+  },
+  {
+    name: "Prisma",
+    desc: "Shadcn is a collection of re-usable components that you can copy and paste into your apps.",
+    link: "https://expressjs.com/",
+    img: "/logos/prisma-white.svg",
+  },
+  {
+    name: "Postgresql",
+    desc: "Shadcn is a collection of re-usable components that you can copy and paste into your apps.",
+    link: "https://expressjs.com/",
+    img: "/logos/postgresql.svg",
+  },
+  {
     name: "MongoDB",
     desc: "MongoDB is a flexible NoSQL database, storing data in BSON documents for versatility. Its document-oriented approach and scalability make it ideal for diverse applications, simplifying development and handling large datasets efficiently.",
     link: "https://www.mongodb.com/",
     img: "/logos/mongodb-icon-2.svg",
   },
   {
-    name: "Mongoose",
-    desc: "Mongoose is an elegant MongoDB object modeling library for Node.js. It provides a straightforward and schema-based solution, enhancing the interaction with MongoDB databases, particularly in the context of Node.js applications.",
-    link: "https://mongoosejs.com/",
-    img: "/logos/mongoose.png",
+    name: "Cloudflare Workers",
+    desc: "Shadcn is a collection of re-usable components that you can copy and paste into your apps.",
+    link: "https://expressjs.com/",
+    img: "/logos/cloudflare-workers.svg",
   },
 ];
 
@@ -103,6 +127,18 @@ export const other = [
     desc: "Fast, disk space efficient package manager",
     link: "https://pnpm.io/",
     img: "/logos/pnpm.svg",
+  },
+  {
+    name: "Docker",
+    desc: "Fast, disk space efficient package manager",
+    link: "https://pnpm.io/",
+    img: "/logos/docker.svg",
+  },
+  {
+    name: "Turbo repo",
+    desc: "Fast, disk space efficient package manager",
+    link: "https://pnpm.io/",
+    img: "/logos/turborepo.svg",
   },
   {
     name: "Ubuntu(Linux)",
@@ -262,4 +298,47 @@ export const projects = [
     timeline: "",
     tech: [],
   },
+];
+
+export const experiences = [
+  {
+    title: "Software Development Engineer Intern",
+    company: "Engaze",
+    location: "Mumbai, India",
+    duration: "August 2024 - January 2025",
+    description: "Worked as an SDE intern.",
+    skills: [
+      "React",
+      "TypeScript",
+      "Nextjs",
+      "Tailwind CSS",
+      "Shadcn",
+      "Redux/RTK",
+      "Node.js",
+      "Expressjs",
+      "Prisma",
+      "Postgresql",
+    ],
+    logo: "/logos/engaze.svg",
+  },
+  // {
+  //   title: "Frontend Developer Intern",
+  //   company: "StartupX",
+  //   location: "Remote",
+  //   duration: "Jun 2021 - Dec 2021",
+  //   description:
+  //     "Built responsive web applications and contributed to the company's design system, resulting in 30% faster development cycles.",
+  //   skills: ["JavaScript", "React", "CSS", "Git"],
+  //   logo: "/logos/startupx.svg",
+  // },
+  // {
+  //   title: "Web Development Freelancer",
+  //   company: "Self-employed",
+  //   location: "Remote",
+  //   duration: "Jan 2020 - May 2021",
+  //   description:
+  //     "Designed and developed websites for small businesses and startups, focusing on performance and user experience.",
+  //   skills: ["HTML/CSS", "JavaScript", "WordPress", "UI/UX"],
+  //   logo: "/logos/freelance.svg",
+  // },
 ];

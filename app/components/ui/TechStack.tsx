@@ -79,7 +79,7 @@ const TechStack: FC = () => {
               }}
               onMouseEnter={() => setHoveredTech(tech.name)}
               onMouseLeave={() => setHoveredTech(null)}
-              className="group"
+              className="group relative"
             >
               <div
                 className={`relative w-full aspect-square flex flex-col items-center justify-center p-2 md:p-3 rounded-lg border overflow-hidden transition-all duration-300 ${
@@ -120,6 +120,23 @@ const TechStack: FC = () => {
                   </h4>
                 </div>
               </div>
+
+              {/* Improved Tooltip - Minimalist Design at Bottom */}
+              <AnimatePresence>
+                {hoveredTech === tech.name && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -5 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -5 }}
+                    transition={{ duration: 0.15 }}
+                    className="absolute left-1/2 -translate-x-1/2 top-full mt-1.5 z-50 pointer-events-none"
+                  >
+                    <div className="bg-zinc-900/90 backdrop-blur-md px-2.5 py-1 text-xs text-white whitespace-nowrap rounded-full border-t border-zinc-800/60 mt-1">
+                      {tech.name}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </motion.div>
           ))}
         </motion.div>

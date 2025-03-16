@@ -1,10 +1,11 @@
-"use client"
+"use client";
 
-import React, { FC } from "react";
+import { motion } from "framer-motion";
+import { FC } from "react";
 import Breadcrumbs from "../components/BreadCrumbs";
 import AboutMe from "../components/ui/AboutMe";
+import Experience from "../components/ui/Experience";
 import TechStack from "../components/ui/TechStack";
-import { motion } from "framer-motion";
 
 interface pageProps {}
 
@@ -38,6 +39,11 @@ const page: FC<pageProps> = ({}) => {
         My Tech Stack
       </h2>
       <TechStack />
+
+      <h2 className="text-2xl mb-4 md:mb-6  font-semibold md:text-3xl relative border-b border-zinc-500/40 pb-4 inline-flex gap-1 items-center tracking-tighter text-[clamp(1rem,5vw,1.5rem)] leading-none w-full mt-12">
+        Experience
+      </h2>
+      <Experience />
     </motion.div>
   );
 };
