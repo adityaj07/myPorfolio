@@ -35,7 +35,7 @@ const ProjectDetail: FC = () => {
       <div className="flex flex-col items-center justify-center h-screen">
         <h2 className="text-2xl font-bold mb-4">Project Not Found</h2>
         <p className="mb-8">
-          Sorry, we couldn't find a project with the slug "{projectSlug}"
+          Sorry, we couldn&apos;t find a project with the slug
         </p>
         <Link
           href="/projects"
