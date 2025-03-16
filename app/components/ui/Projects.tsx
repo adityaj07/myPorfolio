@@ -2,9 +2,9 @@
 
 import { projects } from "@/data";
 import Image from "next/image";
+import Link from "next/link";
 import { FC } from "react";
 import { FaGithub, FaGlobe } from "react-icons/fa";
-import Link from "next/link";
 
 interface ProjectsProps {}
 
@@ -18,7 +18,8 @@ const Projects: FC<ProjectsProps> = ({}) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
       {projects.map((project) => (
-        <div
+        <Link
+          href={`/projects/${project.slug}`}
           key={project.name}
           className="flex flex-col gap-4 rounded-[0.875rem]  shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] hover:bg-[#393939c5] transition-colors duration-150 border border-zinc-800/60 p-2 md:p-3"
         >
@@ -57,11 +58,17 @@ const Projects: FC<ProjectsProps> = ({}) => {
             </p>
             <div className="flex gap-3 items-center">
               {project.tech.map((proj) => (
-                <Image src={proj} alt={proj} width={20} height={20} key={proj}/>
+                <Image
+                  src={proj}
+                  alt={proj}
+                  width={20}
+                  height={20}
+                  key={proj}
+                />
               ))}
             </div>
           </div>
-        </div>
+        </Link>
       ))}
     </div>
   );

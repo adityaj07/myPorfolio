@@ -1,152 +1,129 @@
 "use client";
 
-import { FC, useState } from "react";
-import { languages, frontend, backend, other } from "@/data";
+import { backend, frontend, languages, other } from "@/data";
+import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
-import { FaArrowRight } from "react-icons/fa6";
+import { FC, useState } from "react";
 
-interface TechStackProps {}
+const categories = [
+  { id: "languages", label: "Languages", data: languages },
+  { id: "frontend", label: "Frontend", data: frontend },
+  { id: "backend", label: "Backend", data: backend },
+  { id: "other", label: "Other Tools", data: other },
+];
 
-const trimDescriptionToWords = (description: string, limit: number) => {
-  const words = description.split(" ");
-  const trimmedWords = words.slice(0, limit);
-  return trimmedWords.join(" ");
-};
+const TechStack: FC = () => {
+  const [activeCategory, setActiveCategory] = useState("languages");
+  const [hoveredTech, setHoveredTech] = useState<string | null>(null);
 
-const TechStack: FC<TechStackProps> = ({}) => {
+  // Get active category data
+  const activeCategoryData =
+    categories.find((cat) => cat.id === activeCategory)?.data || [];
+
   return (
-    <div className="flex flex-col gap-6 w-full">
-      <div className="flex flex-col gap-2 rounded-md px-6 py-4 md:px-8 md:py-6 border border-zinc-500/40 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] bg-[#121312]">
-        <h3 className="mb-4 text-lg font-medium inline-flex gap-1 items-center tracking-tighter text-[clamp(.875rem,5vw,1.125rem)] leading-none">
-          Programming languages
-        </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {languages.map((language) => (
-            <div
-              key={language.name}
-              className="flex gap-4 rounded-md px-6 py-4 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] hover:bg-[#393939c5] transition-colors duration-150 border border-zinc-800/60"
+    <div className="w-full">
+      {/* Category Navigation - Slick Tab Design */}
+      <div className="relative mb-12">
+        <div className="absolute h-[1px] w-full bg-zinc-800/50 bottom-0 left-0"></div>
+        <motion.div
+          className="flex gap-1 md:gap-8 overflow-x-auto hide-scrollbar"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          {categories.map((category) => (
+            <button
+              key={category.id}
+              onClick={() => {
+                setActiveCategory(category.id);
+              }}
+              className={`px-4 py-3 whitespace-nowrap text-sm md:text-base transition-all relative ${
+                activeCategory === category.id
+                  ? "text-white font-medium"
+                  : "text-zinc-500 hover:text-zinc-300"
+              }`}
             >
-              <span className="relative flex shrink-0 overflow-hidden w-10 h-10 rounded-lg object-contain">
-                <Image
-                  src={language.img}
-                  alt={language.img}
-                  width={100}
-                  height={100}
-                  className="aspect-square h-full w-full object-contain"
+              {category.label}
+              {activeCategory === category.id && (
+                <motion.div
+                  layoutId="activeTab"
+                  className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-purple-500 to-purple-300"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.3 }}
                 />
-              </span>
-
-              <div className="flex flex-col gap-2">
-                <h4 className="font-bold inline-flex gap-1 items-center tracking-tighter text-[clamp(.875rem,5vw,1.125rem)] leading-none">
-                  {language.name}
-                </h4>
-                <p className="text-[clamp(.75rem,1.5vw,.875rem)] line-clamp-2 max-w-xs">
-                  {trimDescriptionToWords(language.desc, 15)}...
-                </p>
-              </div>
-            </div>
+              )}
+            </button>
           ))}
-        </div>
+        </motion.div>
       </div>
 
-      <div className="flex flex-col gap-2 rounded-md px-6 py-4 md:px-8 md:py-6 border border-zinc-500/40 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] bg-[#121312]">
-        <h3 className="mb-4 text-lg font-medium inline-flex gap-1 items-center tracking-tighter text-[clamp(.875rem,5vw,1.125rem)] leading-none">
-          Frontend
-        </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {frontend.map((frontendItem) => (
-            <div
-              key={frontendItem.name}
-              className="flex gap-4 rounded-md px-6 py-4 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] hover:bg-[#393939c5] transition-colors duration-150 border border-zinc-800/60"
+      {/* Tech Grid - Simple, Clean Layout */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={activeCategory}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.4 }}
+          className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8 gap-3"
+        >
+          {activeCategoryData.map((tech, index) => (
+            <motion.div
+              key={tech.name}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                transition: { delay: index * 0.03, duration: 0.4 },
+              }}
+              onMouseEnter={() => setHoveredTech(tech.name)}
+              onMouseLeave={() => setHoveredTech(null)}
+              className="group"
             >
-              <span className="relative flex shrink-0 overflow-hidden w-10 h-10 rounded-lg object-contain">
-                <Image
-                  src={frontendItem.img}
-                  alt={frontendItem.img}
-                  width={100}
-                  height={100}
-                  className="aspect-square h-full w-full object-contain"
-                />
-              </span>
+              <div
+                className={`relative w-full aspect-square flex flex-col items-center justify-center p-2 md:p-3 rounded-lg border overflow-hidden transition-all duration-300 ${
+                  hoveredTech === tech.name
+                    ? "border-purple-500/70 bg-zinc-900/90 scale-[1.05]"
+                    : "border-zinc-800/30 bg-zinc-900/20 hover:bg-zinc-900/30"
+                }`}
+              >
+                {/* Simple noise texture */}
+                <div className="absolute inset-0 opacity-5 mix-blend-overlay noise"></div>
 
-              <div className="flex flex-col gap-2">
-                <h4 className="font-bold inline-flex gap-1 items-center tracking-tighter text-[clamp(.875rem,5vw,1.125rem)] leading-none">
-                  {frontendItem.name}
-                </h4>
-                <p className="text-[clamp(.75rem,1.5vw,.875rem)] line-clamp-2 max-w-xs">
-                  {trimDescriptionToWords(frontendItem.desc, 15)}...
-                </p>
+                {/* Bottom right gradient */}
+                <div
+                  className={`absolute bottom-0 right-0 w-2/3 h-2/3 transition-opacity duration-300 ${
+                    hoveredTech === tech.name ? "opacity-100" : "opacity-0"
+                  }`}
+                  style={{
+                    background: `radial-gradient(circle at bottom right, rgba(168, 85, 247, 0.15), transparent 70%)`,
+                  }}
+                ></div>
+
+                {/* Tech content */}
+                <div className="relative z-10 flex flex-col items-center justify-center h-full w-full">
+                  {/* Icon */}
+                  <div className="relative w-8 h-8 md:w-10 md:h-10 mb-3 transition-transform duration-300 group-hover:translate-y-[-2px]">
+                    <Image
+                      src={tech.img}
+                      alt={tech.name}
+                      fill
+                      sizes="(max-width: 768px) 32px, 40px"
+                      className="object-contain"
+                    />
+                  </div>
+
+                  {/* Name */}
+                  <h4 className="text-center font-medium text-xs md:text-sm text-zinc-300 group-hover:text-white line-clamp-1 w-full">
+                    {tech.name}
+                  </h4>
+                </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
-      </div>
-
-      <div className="flex flex-col gap-2 rounded-md px-6 py-4 md:px-8 md:py-6 border border-zinc-500/40 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] bg-[#121312]">
-        <h3 className="mb-4 text-lg font-medium inline-flex gap-1 items-center tracking-tighter text-[clamp(.875rem,5vw,1.125rem)] leading-none">
-          Backend
-        </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {backend.map((backendItem) => (
-            <div
-              key={backendItem.name}
-              className="flex gap-4 rounded-md px-6 py-4 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] hover:bg-[#393939c5] transition-colors duration-150 border border-zinc-800/60"
-            >
-              <span className="relative flex shrink-0 overflow-hidden w-10 h-10 rounded-lg object-contain">
-                <Image
-                  src={backendItem.img}
-                  alt={backendItem.img}
-                  width={100}
-                  height={100}
-                  className="aspect-square h-full w-full object-contain"
-                />
-              </span>
-
-              <div className="flex flex-col gap-2">
-                <h4 className="font-bold inline-flex gap-1 items-center tracking-tighter text-[clamp(.875rem,5vw,1.125rem)] leading-none">
-                  {backendItem.name}
-                </h4>
-                <p className="text-[clamp(.75rem,1.5vw,.875rem)] line-clamp-2 max-w-xs">
-                  {trimDescriptionToWords(backendItem.desc, 15)}...
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="flex flex-col gap-2 rounded-md px-6 py-4 md:px-8 md:py-6 border border-zinc-500/40 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] bg-[#121312]">
-        <h3 className="mb-4 text-lg font-medium inline-flex gap-1 items-center tracking-tighter text-[clamp(.875rem,5vw,1.125rem)] leading-none">
-          Others
-        </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {other.map((otherItem) => (
-            <div
-              key={otherItem.name}
-              className="flex gap-4 rounded-md px-6 py-4 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] hover:bg-[#393939c5] transition-colors duration-150 border border-zinc-800/60"
-            >
-              <span className="relative flex shrink-0 overflow-hidden w-10 h-10 rounded-lg object-contain">
-                <Image
-                  src={otherItem.img}
-                  alt={otherItem.img}
-                  width={100}
-                  height={100}
-                  className="aspect-square h-full w-full object-contain"
-                />
-              </span>
-
-              <div className="flex flex-col gap-2">
-                <h4 className="font-bold inline-flex gap-1 items-center tracking-tighter text-[clamp(.875rem,5vw,1.125rem)] leading-none">
-                  {otherItem.name}
-                </h4>
-                <p className="text-[clamp(.75rem,1.5vw,.875rem)] line-clamp-2 max-w-xs">
-                  {trimDescriptionToWords(otherItem.desc, 15)}...
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+        </motion.div>
+      </AnimatePresence>
     </div>
   );
 };
