@@ -1,7 +1,6 @@
 import { TContactFormSchema } from "../lib/types";
 
 export async function sendEmail(data: TContactFormSchema) {
-  // TODO: send email
   const apiEndpoint = "/api/email";
 
   const res = await fetch(apiEndpoint, {
