@@ -22,7 +22,7 @@ const links: NavLink[] = [
   { path: "/projects", icon: <LuConstruction size={20} />, name: "Projects" },
   { path: "/gallery", icon: <BsFillCameraFill size={20} />, name: "Gallery" },
   { path: "/links", icon: <BiLink size={20} />, name: "Links" },
-  { path: "/contact", icon: <FaEnvelope size={20} />, name: "Contact" },
+  // { path: "/contact", icon: <FaEnvelope size={20} />, name: "Contact" },
 ];
 
 const Navbar: FC = () => {

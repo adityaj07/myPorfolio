@@ -15,7 +15,7 @@ const BackgroundImage: FC = () => {
       <div className="absolute pointer-events-none inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10"></div>
 
       {/* Images */}
-      <Image
+      {/* <Image
         src="/ooorganize.svg"
         fill
         sizes="100vw"
@@ -24,6 +24,19 @@ const BackgroundImage: FC = () => {
         style={{
           zIndex: 1,
           opacity: 0.6,
+        }}
+        alt="Hero background"
+      /> */}
+
+      <Image
+        src="/wave.svg"
+        fill
+        sizes="100vw"
+        priority
+        className="object-cover"
+        style={{
+          zIndex: 1,
+          opacity: 0.5,
         }}
         alt="Hero background"
       />

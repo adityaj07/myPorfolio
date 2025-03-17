@@ -161,7 +161,7 @@ export const projects = [
     screenshots: [],
     implementation: "",
     features: [],
-    timeline: "",
+    timeline: "March 2023 - Present",
     tech: [
       "/logos/react-2.svg",
       "/logos/next-js-white.svg",
@@ -306,7 +306,8 @@ export const experiences = [
     company: "Engaze",
     location: "Mumbai, India",
     duration: "August 2024 - January 2025",
-    description: "Worked as an SDE intern.",
+    description:
+      "At Engaze, I worked as an SDE Intern, juggling Next.js, TypeScript, Tailwind, Node.js, and PostgreSQL to build and refine full-stack features. I contributed to the main product, a complementary application, and an admin panel, making things work (and work well). From crafting APIs to smoothing out UI/UX quirks, I wrote type-safe, scalable code while keeping performance snappy and architecture clean.",
     skills: [
       "React",
       "TypeScript",
@@ -321,24 +322,4 @@ export const experiences = [
     ],
     logo: "/logos/engaze.svg",
   },
-  // {
-  //   title: "Frontend Developer Intern",
-  //   company: "StartupX",
-  //   location: "Remote",
-  //   duration: "Jun 2021 - Dec 2021",
-  //   description:
-  //     "Built responsive web applications and contributed to the company's design system, resulting in 30% faster development cycles.",
-  //   skills: ["JavaScript", "React", "CSS", "Git"],
-  //   logo: "/logos/startupx.svg",
-  // },
-  // {
-  //   title: "Web Development Freelancer",
-  //   company: "Self-employed",
-  //   location: "Remote",
-  //   duration: "Jan 2020 - May 2021",
-  //   description:
-  //     "Designed and developed websites for small businesses and startups, focusing on performance and user experience.",
-  //   skills: ["HTML/CSS", "JavaScript", "WordPress", "UI/UX"],
-  //   logo: "/logos/freelance.svg",
-  // },
 ];

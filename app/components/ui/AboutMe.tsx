@@ -11,6 +11,7 @@ import { TbBrandLeetcode } from "react-icons/tb";
 interface AboutMeProps {}
 
 const AboutMe: FC<AboutMeProps> = ({}) => {
+  const contactEmail = process.env.NEXT_PUBLIC_MY_EMAIL;
   return (
     <motion.div
       className="w-full my-8"
@@ -65,12 +66,14 @@ const AboutMe: FC<AboutMeProps> = ({}) => {
               <div className="h-[2px] w-12 bg-gradient-to-r from-purple-500 to-purple-300 mb-6"></div>
 
               <p className="text-zinc-300 leading-relaxed mb-6">
-                Hey, I&apos;m Aditya Joshi, a passionate full-stack web
-                developer dedicated to turning ideas into dynamic digital
-                experiences. I thrive on challenges and continuously explore new
-                technologies in the ever-evolving landscape of web development.
-                Let&apos;s connect and explore the endless possibilities
-                together!
+                Hey, I&apos;m Aditya Joshi, a Full Stack Developer who enjoys
+                building things that work—sometimes on the first try. I spend my
+                time wrangling TypeScript, taming databases, and making sure my
+                CSS doesn&apos;t break at weird screen sizes. If it&apos;s
+                clean, fast, and functional, I&apos;m happy. A lot of my
+                projects never saw the light of day—either lost in the abyss of
+                &quot;one more feature&quot; or buried under refactors. But the
+                ones that did? They work, and they work well.
               </p>
             </motion.div>
 
@@ -112,7 +115,7 @@ const AboutMe: FC<AboutMeProps> = ({}) => {
               </Link>
 
               <Link
-                href="https://leetcode.com/adityaj07"
+                href="https://leetcode.com/adityaj-07"
                 target="_blank"
                 className="flex items-center gap-2 px-4 py-2 rounded-md bg-zinc-800/80 hover:bg-zinc-700/80 transition-colors"
                 rel="noopener noreferrer"
@@ -122,7 +125,7 @@ const AboutMe: FC<AboutMeProps> = ({}) => {
               </Link>
 
               <Link
-                href="/contact"
+                href={`mailto:${contactEmail}?subject=Work%20Inquiry%20from%20Portfolio&body=Hi%20Aditya,%0A%0AI%20visited%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20potential%20opportunity.`}
                 className="flex items-center gap-2 px-4 py-2 rounded-md bg-purple-900/30 hover:bg-purple-900/50 border border-purple-500/30 transition-colors"
               >
                 <span className="text-sm">Contact Me</span>

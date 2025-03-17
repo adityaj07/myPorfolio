@@ -94,7 +94,7 @@ const ProjectDetail: FC = () => {
                 <span className="h-[1px] w-12 bg-purple-500/30"></span>
               </div>
 
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight mb-6 bg-gradient-to-br from-white via-white to-zinc-400 bg-clip-text text-transparent">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight mb-6 bg-gradient-to-br from-white via-white to-zinc-400 bg-clip-text text-transparent leading-[1.2] pb-1">
                 {project.name}
               </h1>
 
