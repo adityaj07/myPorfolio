@@ -39,7 +39,7 @@ const AboutMe: FC<AboutMeProps> = ({}) => {
               {/* Profile Image */}
               <div className="relative w-[160px] h-[160px] md:w-[200px] md:h-[200px] rounded-full overflow-hidden border-2 border-zinc-800/50">
                 <Image
-                  src="/adi.jpeg"
+                  src="/adi.png"
                   fill
                   sizes="(max-width: 768px) 160px, 200px"
                   alt="Aditya Joshi"
