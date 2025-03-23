@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+-0import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script"; // Import Script component
 import Navbar from "./components/Navbar";
@@ -28,7 +28,7 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${process.env.GOOGLE_ANALYTICS_ID}');
+            gtag('config', ${process.env.GOOGLE_ANALYTICS_ID});
           `}
         </Script>
       </head>
