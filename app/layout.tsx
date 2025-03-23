@@ -1,6 +1,6 @@
--0import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Script from "next/script"; // Import Script component
+import Script from "next/script";
 import Navbar from "./components/Navbar";
 import "./globals.css";
 
@@ -11,6 +11,8 @@ export const metadata: Metadata = {
   description: "Portfolio of Aditya Joshi | Full Stack Web Developer",
 };
 
+const gaId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
+
 export default function RootLayout({
   children,
 }: {
@@ -19,18 +21,22 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <head>
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS_ID}`}
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', ${process.env.GOOGLE_ANALYTICS_ID});
-          `}
-        </Script>
+        {gaId && (
+          <>
+            <Script
+              async
+              src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+            />
+            <Script id="google-analytics">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${gaId}');
+              `}
+            </Script>
+          </>
+        )}
       </head>
       <body
         className={`bg-[#161716] ${inter.className} antialiased min-h-full`}
