@@ -305,7 +305,7 @@ export const experiences = [
     title: "Software Development Engineer Intern",
     company: "Engaze",
     location: "Mumbai, India",
-    duration: "August 2024 - January 2025",
+    duration: "August 2024 - February 2025",
     description:
       "At Engaze, I worked as an SDE Intern, juggling Next.js, TypeScript, Tailwind, Node.js, and PostgreSQL to build and refine full-stack features. I contributed to the main product, a complementary application, and an admin panel, making things work (and work well). From crafting APIs to smoothing out UI/UX quirks, I wrote type-safe, scalable code while keeping performance snappy and architecture clean.",
     skills: [
