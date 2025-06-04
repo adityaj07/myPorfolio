@@ -154,7 +154,7 @@ export const projects = [
     slug: "uplog",
     desc: "Uplog is the modern changelog manager designed for SaaS founders and indie devs. Capture every feature release, bug fix, and improvement—publish them on a beautifully designed public page.",
     longDescription: "",
-    liveLink: "https://uplog.vercel.app",
+    liveLink: "https://uplog.adityaj07.tech",
     githubLink: "https://github.com/adityaj07/uplog",
     coverImg: "/projects/project-uplog.jpg",
     imgs: [],
