@@ -150,6 +150,45 @@ export const other = [
 
 export const projects = [
   {
+    name: "Taku",
+    slug: "taku",
+    desc: "Taku is the local-first productivity and time tracking app built for makers, founders, and focused creators. Track tasks, log deep work, and hit weekly goals—all without accounts, cloud sync, or distractions. Everything runs offline, in your browser, with fast UX and full data ownership.",
+    longDescription: "",
+    liveLink: "https://taku-nu.vercel.app",
+    githubLink: "https://github.com/adityaj07/taku",
+    coverImg: "/projects/project-taku.png",
+    imgs: [],
+    screenshots: ["/projects/ss-taku-1.png"],
+    implementation: "",
+    features: [
+      {
+        title: "🧠 Local-first architecture",
+        description:
+          "All data is stored in the browser using IndexedDB. Your workspace stays private and fully offline.",
+      },
+      {
+        title: "✅ Task-based time tracking",
+        description: "Start/stop timers on tasks or log time manually.",
+      },
+      {
+        title: "🧱 Kanban + List Views",
+        description: "View tasks in a drag-and-drop board or structured list.",
+      },
+    ],
+    timeline: "June 2025 - Present",
+    tech: [
+      "/logos/react-2.svg",
+      "/logos/next-js-white.svg",
+      "/logos/tailwind-css-2.svg",
+      "/logos/ts-logo-128.svg",
+      "/logos/zod.svg",
+      "/logos/zustand.svg",
+      "/logos/shadcn.jpeg",
+      "/logos/dexie.png",
+      "/logos/framer-motion.svg",
+    ],
+  },
+  {
     name: "Uplog",
     slug: "uplog",
     desc: "Uplog is the modern changelog manager designed for SaaS founders and indie devs. Capture every feature release, bug fix, and improvement—publish them on a beautifully designed public page.",
@@ -161,7 +200,7 @@ export const projects = [
     screenshots: [],
     implementation: "",
     features: [],
-    timeline: "March 2023 - Present",
+    timeline: "March 2025 - Present",
     tech: [
       "/logos/react-2.svg",
       "/logos/next-js-white.svg",

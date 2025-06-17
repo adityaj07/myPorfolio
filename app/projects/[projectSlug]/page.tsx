@@ -319,7 +319,7 @@ const ProjectDetail: FC = () => {
           </div>
         </motion.div>
 
-        {/* Key Features Section - Improved Visual Layout */}
+        {/* Key Features Section - Ultra Compact List Style */}
         {project.features && project.features.length > 0 && (
           <motion.div
             className="mt-16"
@@ -327,37 +327,44 @@ const ProjectDetail: FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
           >
-            <h2 className="text-xl font-medium mb-8 text-white flex items-center gap-3">
+            <h2 className="text-xl font-medium mb-6 text-white flex items-center gap-3">
               <span className="w-1.5 h-5 bg-purple-500 rounded-full"></span>
               Key Features
             </h2>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div className="space-y-3">
               {project.features.map((feature, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.6 + index * 0.1, duration: 0.5 }}
-                  className="relative group"
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.6 + index * 0.05, duration: 0.3 }}
+                  className="group flex items-start gap-4 p-3 rounded-lg hover:bg-zinc-900/20 transition-all duration-200"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="bg-zinc-900/20 backdrop-blur-sm border border-zinc-800/60 rounded-xl p-6 relative z-10">
-                    <div className="flex items-start gap-4 mb-3">
-                      <div className="w-10 h-10 rounded-full bg-purple-900/30 border border-purple-700/30 flex items-center justify-center text-sm font-medium text-purple-300 flex-shrink-0">
-                        {index + 1}
-                      </div>
-                      {/* <h3 className="text-lg font-medium text-white/90 pt-1.5">
+                  {/* Minimal indicator */}
+                  <div className="flex-shrink-0 w-5 h-5 rounded-full border border-purple-500/30 flex items-center justify-center mt-0.5 group-hover:border-purple-500/50 transition-colors">
+                    <div className="w-1.5 h-1.5 rounded-full bg-purple-500/60 group-hover:bg-purple-500 transition-colors" />
+                  </div>
+
+                  {/* Content */}
+                  <div className="flex-1">
+                    <div className="flex items-baseline gap-3">
+                      <h3 className="text-sm font-medium text-white/90">
                         {typeof feature === "object" && feature.title
                           ? feature.title
                           : `Feature ${index + 1}`}
-                      </h3> */}
+                      </h3>
+                      <span className="text-xs text-purple-400/60 font-mono">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
                     </div>
-                    {/* <p className="text-zinc-300 leading-relaxed pl-14">
-                      {typeof feature === "object" && feature.description
+                    <p className="text-sm text-zinc-400 mt-1 leading-relaxed">
+                      {typeof feature === "object" && "description" in feature
                         ? feature.description
-                        : feature}
-                    </p> */}
+                        : typeof feature === "string"
+                        ? feature
+                        : String(feature)}
+                    </p>
                   </div>
                 </motion.div>
               ))}
