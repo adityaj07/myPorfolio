@@ -193,7 +193,7 @@ export const projects = [
     slug: "uplog",
     desc: "Uplog is the modern changelog manager designed for SaaS founders and indie devs. Capture every feature release, bug fix, and improvement—publish them on a beautifully designed public page.",
     longDescription: "",
-    liveLink: "https://uplog.vercel.app",
+    liveLink: "https://uplog.adityaj07.tech",
     githubLink: "https://github.com/adityaj07/uplog",
     coverImg: "/projects/project-uplog.jpg",
     imgs: [],
@@ -344,7 +344,7 @@ export const experiences = [
     title: "Software Development Engineer Intern",
     company: "Engaze",
     location: "Mumbai, India",
-    duration: "August 2024 - January 2025",
+    duration: "August 2024 - February 2025",
     description:
       "At Engaze, I worked as an SDE Intern, juggling Next.js, TypeScript, Tailwind, Node.js, and PostgreSQL to build and refine full-stack features. I contributed to the main product, a complementary application, and an admin panel, making things work (and work well). From crafting APIs to smoothing out UI/UX quirks, I wrote type-safe, scalable code while keeping performance snappy and architecture clean.",
     skills: [
