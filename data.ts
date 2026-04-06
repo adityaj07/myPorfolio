@@ -386,7 +386,7 @@ export const experiences = [
   {
     title: 'Full Stack Developer',
     company: 'STPL',
-    location: 'India',
+    location: 'Remote • India',
     duration: 'October 2025 - March 2026',
     description: [
       'Built and owned 3 production React Native and React (Next.js) applications, including an app serving 1,500+ users, delivering scalable cross-platform experiences.',
@@ -415,7 +415,7 @@ export const experiences = [
     title: 'Software Development Engineer Intern',
     company: 'Engaze',
     location: 'Mumbai, India',
-    duration: 'Aug 2024 - Feb 2025',
+    duration: 'August 2024 - February 2025',
     description: [
       'Worked on the core production application of an early-stage startup, developing and shipping end-to-end features such as Blogs and Reels.',
       'Built a complementary full-stack platform from scratch, handling frontend development, backend API design, and fixing production issues across systems.',
@@ -432,4 +432,26 @@ export const experiences = [
     ],
     logo: '/logos/engaze.svg',
   },
+];
+
+export const freelanceProjects = [
+  {
+    name: 'Momoshu',
+    description:
+      'Built and deployed a full-stack food ordering platform (mobile app + admin dashboard + POS system) handling 800+ daily orders, with location-based outlet auto-selection, Razorpay payments, Google Maps integration, and AWS-backed infrastructure.',
+    tech: [
+      'React Native',
+      'React (Vite)',
+      'Node.js',
+      'Express.js',
+      'MongoDB',
+      'AWS EC2',
+      'AWS S3',
+      'Zustand',
+      'Razorpay',
+      'Google Maps API',
+    ],
+    duration: 'Feb. 2026 - Mar. 2026',
+  },
+  // Add more here later
 ];

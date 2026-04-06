@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
-import Image from "next/image";
-import Link from "next/link";
-import { FC } from "react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
-import { TbBrandLeetcode } from "react-icons/tb";
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+import Link from 'next/link';
+import { FC } from 'react';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
+import { TbBrandLeetcode } from 'react-icons/tb';
 
 interface AboutMeProps {}
 
@@ -66,14 +66,11 @@ const AboutMe: FC<AboutMeProps> = ({}) => {
               <div className="h-[2px] w-12 bg-gradient-to-r from-purple-500 to-purple-300 mb-6"></div>
 
               <p className="text-zinc-300 leading-relaxed mb-6">
-                Hey, I&apos;m Aditya Joshi, a Full Stack Developer who enjoys
-                building things that work—sometimes on the first try. I spend my
-                time wrangling TypeScript, taming databases, and making sure my
-                CSS doesn&apos;t break at weird screen sizes. If it&apos;s
-                clean, fast, and functional, I&apos;m happy. A lot of my
-                projects never saw the light of day—either lost in the abyss of
-                &quot;one more feature&quot; or buried under refactors. But the
-                ones that did? They work, and they work well.
+                Hey, I&apos;m Aditya Joshi, a Developer, currently developing mobile apps with React
+                Native (was easier to get into after React, hence no Flutter yet). I also build
+                websites and try to make them look beautiful (reach out if you are looking to get
+                one built). I wrote this by hand, could've used AI, but I didn&apos;t like it&apos;s
+                vibe. That reminds me of something, yeahh I&apos;m a vibe coder too.
               </p>
             </motion.div>
 
