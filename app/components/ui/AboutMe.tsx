@@ -69,8 +69,8 @@ const AboutMe: FC<AboutMeProps> = ({}) => {
                 Hey, I&apos;m Aditya Joshi, a Developer, currently developing mobile apps with React
                 Native (was easier to get into after React, hence no Flutter yet). I also build
                 websites and try to make them look beautiful (reach out if you are looking to get
-                one built). I wrote this by hand, could've used AI, but I didn&apos;t like it&apos;s
-                vibe. That reminds me of something, yeahh I&apos;m a vibe coder too.
+                one built). I wrote this by hand, could&apos;ve used AI, but I didn&apos;t like
+                it&apos;s vibe. That reminds me of something, yeahh I&apos;m a vibe coder too.
               </p>
             </motion.div>
 
