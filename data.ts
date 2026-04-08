@@ -174,6 +174,65 @@ export const other = [
 
 export const projects = [
   {
+    name: 'Momoshu',
+    slug: 'momoshu',
+    freelance: true,
+    desc: 'Built an end-to-end food ordering and operations platform for a growing outlet, solving fragmented ordering and operational inefficiencies while scaling to 800+ daily orders.',
+
+    longDescription:
+      'The client was a growing food outlet facing operational bottlenecks due to fragmented systems. Orders were difficult to manage, outlet coordination was manual, and there was no unified system connecting customers, kitchen operations, and business management.\n\nThe challenge was to design and build a single platform that could handle customer ordering, real-time operations, and outlet-level control—while being fast, reliable, and easy to use for both customers and staff.\n\nI built a full-stack solution consisting of a customer-facing mobile app, an admin dashboard, and a POS system. The mobile app focused on speed and simplicity, including automatic outlet selection based on user location and a smooth checkout experience with Razorpay integration.\n\nOn the operations side, the admin and POS systems enabled real-time order tracking, outlet management, and streamlined workflows. The backend was designed to handle high throughput, and the entire system was deployed on AWS EC2 with S3 for media handling.\n\nThe platform is now actively used in production, handling 800+ daily orders with reliable performance and significantly improved operational efficiency.',
+
+    liveLink: '',
+    githubLink: '',
+    coverImg: '/projects/project-momoshu.png',
+    imgs: ['/projects/momoshu-1-portfolio.png'],
+    screenshots: [
+      '/projects/momoshu-1-portfolio.png',
+      '/projects/momoshu-2-portfolio.png',
+      '/projects/momoshu-3-portfolio.png',
+      '/projects/momoshu-4-portfolio.png',
+    ],
+
+    implementation:
+      'Backend services were built using Node.js and Express with MongoDB for flexible data modeling. APIs were designed for performance and scalability to support high order volume.\n\nThe mobile app was developed using React Native (Expo + CLI) with Zustand for efficient state management and a smooth user experience. The admin dashboard and POS system were built using React (Vite) for speed and simplicity.\n\nRazorpay was integrated for secure payments, and Google Maps APIs were used for location-based outlet selection and management. The system was deployed on AWS EC2 with S3 handling media storage.',
+
+    features: [
+      {
+        title: '📍 Smart outlet assignment',
+        description:
+          'Automatically routes users to the nearest outlet based on location, reducing manual errors and improving delivery efficiency.',
+      },
+      {
+        title: '💳 Integrated payments',
+        description: 'Seamless Razorpay integration for secure and reliable in-app transactions.',
+      },
+      {
+        title: '🧾 Unified admin + POS system',
+        description:
+          'Centralized dashboard for managing orders, outlets, and real-time operations.',
+      },
+      {
+        title: '⚡ Scalable system design',
+        description:
+          'Built to handle 800+ daily orders with consistent performance and reliability.',
+      },
+    ],
+
+    timeline: 'Feb. 2026 - Mar. 2026',
+
+    tech: [
+      '/logos/expo.svg',
+      '/logos/react-2.svg',
+      '/logos/nodejs-1.svg',
+      '/logos/expressjs-109.svg',
+      '/logos/mongodb-icon-2.svg',
+      '/logos/ec2.svg',
+      '/logos/s3-aws.svg',
+      '/logos/razorpay.png',
+      '/logos/zustand.svg',
+    ],
+  },
+  {
     name: 'Taku',
     slug: 'taku',
     desc: 'Taku is the local-first productivity and time tracking app built for makers, founders, and focused creators. Track tasks, log deep work, and hit weekly goals—all without accounts, cloud sync, or distractions. Everything runs offline, in your browser, with fast UX and full data ownership.',
@@ -199,7 +258,7 @@ export const projects = [
         description: 'View tasks in a drag-and-drop board or structured list.',
       },
     ],
-    timeline: 'June 2025 - Present',
+    timeline: 'June 2025 - July 2025',
     tech: [
       '/logos/react-2.svg',
       '/logos/next-js-white.svg',
@@ -212,6 +271,7 @@ export const projects = [
       '/logos/framer-motion.svg',
     ],
   },
+
   {
     name: 'Uplog',
     slug: 'uplog',
@@ -437,6 +497,8 @@ export const experiences = [
 export const freelanceProjects = [
   {
     name: 'Momoshu',
+    showInProjects: true,
+    projectSlug: 'momoshu',
     description:
       'Built and deployed a full-stack food ordering platform (mobile app + admin dashboard + POS system) handling 800+ daily orders, with location-based outlet auto-selection, Razorpay payments, Google Maps integration, and AWS-backed infrastructure.',
     tech: [

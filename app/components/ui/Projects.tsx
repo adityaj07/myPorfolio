@@ -35,12 +35,19 @@ const Projects: FC<ProjectsProps> = ({}) => {
 
           <div className="flex flex-col gap-2 px-4 py-2">
             <div className="flex justify-between items-center mb-4">
-              <h2 className="font-bold inline-flex gap-1 items-center tracking-tighter text-[clamp(.875rem,5vw,1.125rem)] leading-none ">
-                {project.name}
-              </h2>
+              <div className="flex items-center gap-2">
+                <h2 className="font-bold inline-flex gap-1 items-center tracking-tighter text-[clamp(.875rem,5vw,1.125rem)] leading-none ">
+                  {project.name}
+                </h2>
+                {project.freelance && (
+                  <span className="rounded-full border border-emerald-500/40 bg-emerald-500/10 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-emerald-300">
+                    Client Project
+                  </span>
+                )}
+              </div>
               <div className="flex justify-between items-center gap-4 text-sm">
                 {project.githubLink && (
-                  <Link href={project.liveLink} target="_blank">
+                  <Link href={project.githubLink} target="_blank">
                     <FaGithub className="w-5 h-5" />
                   </Link>
                 )}

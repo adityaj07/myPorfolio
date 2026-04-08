@@ -1,15 +1,16 @@
-"use client";
+'use client';
 
-import { AnimatePresence, motion } from "framer-motion";
-import Image from "next/image";
-import Link from "next/link";
-import { useParams } from "next/navigation";
-import { FC, useState } from "react";
-import { BsArrowUpRight } from "react-icons/bs";
-import { FaGithub } from "react-icons/fa";
-import { HiOutlineExternalLink } from "react-icons/hi";
-import { projects } from "../../../data";
-import Breadcrumbs from "../../components/BreadCrumbs";
+import { AnimatePresence, motion } from 'framer-motion';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useParams } from 'next/navigation';
+import { FC, useState } from 'react';
+import { BsArrowUpRight } from 'react-icons/bs';
+import { FaGithub } from 'react-icons/fa';
+import { HiOutlineExternalLink } from 'react-icons/hi';
+import { projects } from '../../../data';
+import Breadcrumbs from '../../components/BreadCrumbs';
+import NeumorphicCtaButton from '../../components/ui/NeumorphicCtaButton';
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -30,7 +31,7 @@ const ProjectDetail: FC = () => {
   const [activeImage, setActiveImage] = useState(0);
   const [showFullImage, setShowFullImage] = useState(false);
 
-  const project = projects.find((p) => p.slug === projectSlug);
+  const project = projects.find(p => p.slug === projectSlug);
 
   if (!project) {
     return (
@@ -66,8 +67,8 @@ const ProjectDetail: FC = () => {
         >
           <Breadcrumbs
             breadcrumbs={[
-              { label: "Home", href: "/" },
-              { label: "Projects", href: "/projects" },
+              { label: 'Home', href: '/' },
+              { label: 'Projects', href: '/projects' },
               {
                 label: project.name,
                 href: `/projects/${projectSlug}`,
@@ -89,7 +90,7 @@ const ProjectDetail: FC = () => {
             <div className="mb-6">
               <div className="flex items-center gap-3 mb-3">
                 <span className="text-sm text-purple-400 font-medium uppercase tracking-wider">
-                  {project.timeline || "2023"}
+                  {project.timeline || '2023'}
                 </span>
                 <span className="h-[1px] w-12 bg-purple-500/30"></span>
               </div>
@@ -98,9 +99,7 @@ const ProjectDetail: FC = () => {
                 {project.name}
               </h1>
 
-              <p className="text-zinc-300 leading-relaxed mb-6">
-                {project.desc}
-              </p>
+              <p className="text-zinc-300 leading-relaxed mb-6">{project.desc}</p>
 
               {/* Project Links */}
               <div className="flex flex-wrap gap-3 mt-2">
@@ -217,43 +216,50 @@ const ProjectDetail: FC = () => {
               // Extract clean tech name from path or use original tech name if available
               const cleanTechName = () => {
                 // Extract filename without extension
-                const rawFilename =
-                  techPath.split("/").pop()?.split(".")[0] || "";
+                const rawFilename = techPath.split('/').pop()?.split('.')[0] || '';
 
                 // Common tech name mappings for irregular filenames
                 const techNameMap: Record<string, string> = {
-                  // Add specific mappings for your oddly named files
-                  // Examples (adjust based on your actual filenames):
-                  astro: "Astro",
-                  reactjs: "React",
-                  nextjs: "Next.js",
-                  nodejs: "Node.js",
-                  "c++": "C++",
-                  "cloudflare-workers": "Cloudflare Workers",
-                  docker: "Docker",
-                  hono: "Hono",
-                  "mongodb-icon-2": "MongoDB",
-                  "logo-javascript": "Javascript",
-                  "nextjs-white": "Next.js",
-                  "next-js": "Nextjs",
-                  "nextjs-13": "Nextjs",
-                  pnpm: "Pnpm",
-                  postgresql: "Postgresql",
-                  "prisma-white": "Prisma",
-                  prisma: "Prisma",
-                  "react-query": "React Query",
-                  "python-5": "Python",
-                  zustand: "Zustand",
-                  redux: "Redux",
-                  shadcn: "Shadcn",
-                  "tailwind-css-2": "Tailwind CSS",
-                  "ts-logo-128": "Typescript",
-                  zod: "Zod",
-                  "ubuntu-4": "Ubuntu",
-                  turborepo: "Turborepo",
-                  "java-4": "Java",
-                  mongoose: "Mongoose",
-                  "next-js-white": "Nextjs",
+                  astro: 'Astro',
+                  aws: 'AWS',
+                  bun: 'Bun',
+                  'c++': 'C++',
+                  'cloudflare-workers': 'Cloudflare Workers',
+                  dexie: 'Dexie',
+                  docker: 'Docker',
+                  ec2: 'AWS EC2',
+                  engaze: 'Engaze',
+                  expo: 'Expo',
+                  'expressjs-109': 'Express.js',
+                  figma: 'Figma',
+                  'framer-motion': 'Framer Motion',
+                  hono: 'Hono',
+                  'java-4': 'Java',
+                  'mongodb-icon-2': 'MongoDB',
+                  mongoose: 'Mongoose',
+                  'logo-javascript': 'Javascript',
+                  'next-js': 'Next.js',
+                  'next-js-white': 'Next.js',
+                  'nextjs-13': 'Next.js',
+                  'nodejs-1': 'Node.js',
+                  pnpm: 'pnpm',
+                  postgresql: 'PostgreSQL',
+                  'prisma-white': 'Prisma',
+                  prisma: 'Prisma',
+                  'python-5': 'Python',
+                  'react-2': 'React',
+                  'react-query': 'React Query',
+                  redux: 'Redux',
+                  razorpay: 'Razorpay',
+                  's3-aws': 'AWS S3',
+                  shadcn: 'Shadcn',
+                  'socket-io': 'Socket.IO',
+                  'tailwind-css-2': 'Tailwind CSS',
+                  'ts-logo-128': 'TypeScript',
+                  turborepo: 'Turborepo',
+                  'ubuntu-4': 'Ubuntu',
+                  zod: 'Zod',
+                  zustand: 'Zustand',
                 };
 
                 // If we have a direct mapping, use it
@@ -263,24 +269,18 @@ const ProjectDetail: FC = () => {
 
                 // Otherwise clean up the name
                 return rawFilename
-                  .replace(/\d+/g, "") // Remove numbers
-                  .replace(/-/g, " ") // Replace hyphens with spaces
-                  .split(" ")
-                  .map((word) => {
+                  .replace(/\d+/g, '') // Remove numbers
+                  .replace(/-/g, ' ') // Replace hyphens with spaces
+                  .split(' ')
+                  .map(word => {
                     // Special case for common abbreviations
-                    if (
-                      ["js", "ts", "ui", "ux", "api", "css"].includes(
-                        word.toLowerCase()
-                      )
-                    ) {
+                    if (['js', 'ts', 'ui', 'ux', 'api', 'css'].includes(word.toLowerCase())) {
                       return word.toUpperCase();
                     }
                     // Otherwise capitalize first letter
-                    return (
-                      word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
-                    );
+                    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
                   })
-                  .join(" ")
+                  .join(' ')
                   .trim();
               };
 
@@ -302,10 +302,10 @@ const ProjectDetail: FC = () => {
                         fill
                         sizes="64px"
                         className="object-contain p-1"
-                        onError={(e) => {
+                        onError={e => {
                           // Fallback if logo not found
                           const target = e.target as HTMLImageElement;
-                          target.src = "/logos/default.svg";
+                          target.src = '/logos/default.svg';
                         }}
                       />
                     </div>
@@ -350,20 +350,20 @@ const ProjectDetail: FC = () => {
                   <div className="flex-1">
                     <div className="flex items-baseline gap-3">
                       <h3 className="text-sm font-medium text-white/90">
-                        {typeof feature === "object" && feature.title
+                        {typeof feature === 'object' && feature.title
                           ? feature.title
                           : `Feature ${index + 1}`}
                       </h3>
                       <span className="text-xs text-purple-400/60 font-mono">
-                        {String(index + 1).padStart(2, "0")}
+                        {String(index + 1).padStart(2, '0')}
                       </span>
                     </div>
                     <p className="text-sm text-zinc-400 mt-1 leading-relaxed">
-                      {typeof feature === "object" && "description" in feature
+                      {typeof feature === 'object' && 'description' in feature
                         ? feature.description
-                        : typeof feature === "string"
-                        ? feature
-                        : String(feature)}
+                        : typeof feature === 'string'
+                          ? feature
+                          : String(feature)}
                     </p>
                   </div>
                 </motion.div>
@@ -450,8 +450,8 @@ const ProjectDetail: FC = () => {
                     key={index}
                     className={`rounded-lg overflow-hidden relative h-20 w-36 flex-shrink-0 cursor-pointer transition-all snap-center ${
                       activeImage === index
-                        ? "ring-2 ring-purple-500 opacity-100 scale-105"
-                        : "opacity-60 hover:opacity-100 border border-zinc-800/50"
+                        ? 'ring-2 ring-purple-500 opacity-100 scale-105'
+                        : 'opacity-60 hover:opacity-100 border border-zinc-800/50'
                     }`}
                     onClick={() => setActiveImage(index)}
                   >
@@ -482,19 +482,54 @@ const ProjectDetail: FC = () => {
               Technical Implementation
             </h2>
             <div className="bg-zinc-900/20 backdrop-blur-sm border border-zinc-800/60 rounded-xl p-6">
-              <p className="text-zinc-300 leading-relaxed">
-                {project.implementation}
-              </p>
+              <p className="text-zinc-300 leading-relaxed">{project.implementation}</p>
             </div>
           </motion.div>
         )}
 
         {/* Bottom Navigation */}
         <motion.div
+          className="mt-16 rounded-2xl border border-purple-500/20 bg-gradient-to-br from-purple-900/20 via-zinc-900/70 to-zinc-900/70 p-6 md:p-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+        >
+          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+            <div>
+              <p className="text-xs uppercase tracking-[0.2em] text-purple-300/80 mb-2">
+                Let&apos;s Build Yours Next
+              </p>
+              <h3 className="text-xl md:text-2xl font-medium text-white">
+                Need a product like this for your startup or business?
+              </h3>
+              <p className="text-zinc-300 mt-2">
+                I design, ship, and scale full-stack apps for real users.
+              </p>
+            </div>
+            <div className="flex flex-wrap items-center gap-3">
+              <NeumorphicCtaButton
+                href="https://cal.com/adityaj07"
+                target="_blank"
+                rel="noopener noreferrer"
+                icon={<BsArrowUpRight className="text-xs opacity-80" />}
+              >
+                Book a Call
+              </NeumorphicCtaButton>
+              <Link
+                href="mailto:joshiaditya.aj07@gmail.com?subject=Project%20Inquiry&body=Hi%20Aditya,%0A%0AI%20want%20to%20build%20something%20similar%20and%20would%20love%20to%20connect."
+                className="inline-flex items-center rounded-full border border-zinc-700/80 bg-zinc-900/70 px-4 py-2.5 text-sm text-zinc-200 transition-all hover:bg-zinc-800/80 hover:text-white"
+              >
+                Email Me
+              </Link>
+            </div>
+          </div>
+        </motion.div>
+
+        <motion.div
           className="mt-16 pt-8 border-t border-zinc-800/30 flex justify-between"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.8 }}
+          transition={{ duration: 0.5, delay: 0.9 }}
         >
           <Link
             href="/projects"
@@ -538,7 +573,7 @@ const ProjectDetail: FC = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
               className="absolute top-4 right-4 text-white/80 hover:text-white bg-zinc-800/50 hover:bg-zinc-700/50 p-2 rounded-full"
-              onClick={(e) => {
+              onClick={e => {
                 e.stopPropagation();
                 setShowFullImage(false);
               }}
@@ -560,7 +595,7 @@ const ProjectDetail: FC = () => {
               exit={{ scale: 0.9, opacity: 0 }}
               transition={{ duration: 0.4 }}
               className="w-full h-[80vh] max-w-6xl flex items-center justify-center"
-              onClick={(e) => e.stopPropagation()}
+              onClick={e => e.stopPropagation()}
             >
               <div className="relative w-full h-full flex items-center justify-center">
                 <Image
@@ -589,10 +624,10 @@ const ProjectDetail: FC = () => {
             {project.screenshots && project.screenshots.length > 1 && (
               <>
                 <button
-                  onClick={(e) => {
+                  onClick={e => {
                     e.stopPropagation();
-                    setActiveImage((prev) =>
-                      prev === 0 ? project.screenshots.length - 1 : prev - 1
+                    setActiveImage(prev =>
+                      prev === 0 ? project.screenshots.length - 1 : prev - 1,
                     );
                   }}
                   className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 backdrop-blur-sm p-3 rounded-full transition-colors"
@@ -608,10 +643,10 @@ const ProjectDetail: FC = () => {
                   </svg>
                 </button>
                 <button
-                  onClick={(e) => {
+                  onClick={e => {
                     e.stopPropagation();
-                    setActiveImage((prev) =>
-                      prev === project.screenshots.length - 1 ? 0 : prev + 1
+                    setActiveImage(prev =>
+                      prev === project.screenshots.length - 1 ? 0 : prev + 1,
                     );
                   }}
                   className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 backdrop-blur-sm p-3 rounded-full transition-colors"

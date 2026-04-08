@@ -4,9 +4,11 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
+import { BsArrowUpRight } from 'react-icons/bs';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import { TbBrandLeetcode } from 'react-icons/tb';
+import NeumorphicCtaButton from './NeumorphicCtaButton';
 
 interface AboutMeProps {}
 
@@ -102,7 +104,7 @@ const AboutMe: FC<AboutMeProps> = ({}) => {
               </Link>
 
               <Link
-                href="https://www.linkedin.com/in/aditya-joshi"
+                href="https://www.linkedin.com/in/adityaj07"
                 target="_blank"
                 className="flex items-center gap-2 px-4 py-2 rounded-md bg-zinc-800/80 hover:bg-zinc-700/80 transition-colors"
                 rel="noopener noreferrer"
@@ -121,11 +123,21 @@ const AboutMe: FC<AboutMeProps> = ({}) => {
                 <span className="text-sm">LeetCode</span>
               </Link>
 
+              <NeumorphicCtaButton
+                href="https://cal.com/adityaj07"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm"
+                icon={<BsArrowUpRight className="text-xs opacity-80" />}
+              >
+                Book a Call
+              </NeumorphicCtaButton>
+
               <Link
                 href={`mailto:${contactEmail}?subject=Work%20Inquiry%20from%20Portfolio&body=Hi%20Aditya,%0A%0AI%20visited%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20potential%20opportunity.`}
-                className="flex items-center gap-2 px-4 py-2 rounded-md bg-purple-900/30 hover:bg-purple-900/50 border border-purple-500/30 transition-colors"
+                className="flex items-center gap-2 px-4 py-2 rounded-md bg-zinc-800/80 hover:bg-zinc-700/80 transition-colors"
               >
-                <span className="text-sm">Contact Me</span>
+                <span className="text-sm">Email Me</span>
               </Link>
             </motion.div>
           </div>

@@ -2,9 +2,11 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 import { FC, useState, useRef } from 'react';
 import { experiences, freelanceProjects } from '../../../data';
 import { ArrowUpRight } from 'lucide-react';
+import NeumorphicCtaButton from './NeumorphicCtaButton';
 
 const Experience: FC = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -140,74 +142,98 @@ const Experience: FC = () => {
         className="flex gap-4 overflow-x-auto pb-4 px-4 scrollbar-none"
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
-        {freelanceProjects.map((project, index) => (
-          <motion.div
-            key={index}
-            className="relative flex-shrink-0 w-[300px] rounded-xl p-5 cursor-default"
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.4, delay: index * 0.1 }}
-            viewport={{ once: true }}
-            onMouseEnter={() => setHoveredProject(index)}
-            onMouseLeave={() => setHoveredProject(null)}
-            style={{
-              background:
-                hoveredProject === index ? 'rgba(168,85,247,0.06)' : 'rgba(255,255,255,0.02)',
-              border:
-                hoveredProject === index
-                  ? '1px solid rgba(168,85,247,0.25)'
-                  : '1px solid rgba(255,255,255,0.06)',
-              transition: 'background 0.3s, border 0.3s',
-              backdropFilter: 'blur(8px)',
-            }}
-          >
-            {/* Faint glow on hover */}
-            {hoveredProject === index && (
-              <div
-                className="absolute inset-0 rounded-xl pointer-events-none"
-                style={{
-                  background:
-                    'radial-gradient(ellipse at top left, rgba(168,85,247,0.08) 0%, transparent 70%)',
-                }}
-              />
-            )}
+        {freelanceProjects.map((project, index) => {
+          const hasProjectLink = Boolean(project.showInProjects && project.projectSlug);
 
-            {/* Duration */}
-            <span className="font-mono text-[11px] text-zinc-500 tracking-wide">
-              {project.duration}
-            </span>
-
-            {/* Name */}
-            <h4
-              className="mt-2 text-base font-medium transition-colors duration-300"
-              style={{ color: hoveredProject === index ? '#fff' : '#e4e4e7' }}
+          const card = (
+            <motion.div
+              className={`relative flex-shrink-0 w-[300px] rounded-xl p-5 ${
+                hasProjectLink ? 'cursor-pointer' : 'cursor-default'
+              }`}
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              onMouseEnter={() => setHoveredProject(index)}
+              onMouseLeave={() => setHoveredProject(null)}
+              style={{
+                background:
+                  hoveredProject === index ? 'rgba(168,85,247,0.06)' : 'rgba(255,255,255,0.02)',
+                border:
+                  hoveredProject === index
+                    ? '1px solid rgba(168,85,247,0.25)'
+                    : '1px solid rgba(255,255,255,0.06)',
+                transition: 'background 0.3s, border 0.3s',
+                backdropFilter: 'blur(8px)',
+              }}
             >
-              {project.name}
-            </h4>
-
-            {/* Description */}
-            <p className="mt-1.5 text-sm leading-relaxed text-zinc-400">{project.description}</p>
-
-            {/* Tech stack */}
-            <div className="mt-4 flex flex-wrap gap-1.5">
-              {project.tech.map(t => (
-                <span
-                  key={t}
-                  className="px-2 py-0.5 text-[11px] rounded-full"
+              {/* Faint glow on hover */}
+              {hoveredProject === index && (
+                <div
+                  className="absolute inset-0 rounded-xl pointer-events-none"
                   style={{
                     background:
-                      hoveredProject === index ? 'rgba(168,85,247,0.12)' : 'rgba(255,255,255,0.04)',
-                    color: hoveredProject === index ? 'rgba(216,180,254,0.9)' : '#a1a1aa',
-                    border: '1px solid rgba(168,85,247,0.15)',
-                    transition: 'all 0.3s',
+                      'radial-gradient(ellipse at top left, rgba(168,85,247,0.08) 0%, transparent 70%)',
                   }}
-                >
-                  {t}
-                </span>
-              ))}
-            </div>
-          </motion.div>
-        ))}
+                />
+              )}
+
+              {/* Duration */}
+              <span className="font-mono text-[11px] text-zinc-500 tracking-wide">
+                {project.duration}
+              </span>
+
+              {/* Name */}
+              <h4
+                className="mt-2 text-base font-medium transition-colors duration-300"
+                style={{ color: hoveredProject === index ? '#fff' : '#e4e4e7' }}
+              >
+                {project.name}
+              </h4>
+
+              {/* Description */}
+              <p className="mt-1.5 text-sm leading-relaxed text-zinc-400">{project.description}</p>
+
+              {/* Tech stack */}
+              <div className="mt-4 flex flex-wrap gap-1.5">
+                {project.tech.map(t => (
+                  <span
+                    key={t}
+                    className="px-2 py-0.5 text-[11px] rounded-full"
+                    style={{
+                      background:
+                        hoveredProject === index
+                          ? 'rgba(168,85,247,0.12)'
+                          : 'rgba(255,255,255,0.04)',
+                      color: hoveredProject === index ? 'rgba(216,180,254,0.9)' : '#a1a1aa',
+                      border: '1px solid rgba(168,85,247,0.15)',
+                      transition: 'all 0.3s',
+                    }}
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+
+              {hasProjectLink && (
+                <div className="mt-4 inline-flex items-center gap-1 rounded-full border border-purple-500/30 bg-purple-500/10 px-2 py-1 text-[10px] uppercase tracking-wide text-purple-200">
+                  View Project
+                  <ArrowUpRight size={11} />
+                </div>
+              )}
+            </motion.div>
+          );
+
+          if (!hasProjectLink) {
+            return <div key={project.name}>{card}</div>;
+          }
+
+          return (
+            <Link key={project.name} href={`/projects/${project.projectSlug}`} className="block">
+              {card}
+            </Link>
+          );
+        })}
 
         {/* "More coming" ghost card */}
         <motion.div
@@ -227,37 +253,15 @@ const Experience: FC = () => {
             Want to get your app or website built?
           </p>
 
-          <a
+          <NeumorphicCtaButton
             href="https://cal.com/adityaj07"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center gap-1 px-4 py-2 text-xs font-mono tracking-wide rounded-lg text-white transition-all duration-300"
-            style={{
-              background: 'linear-gradient(135deg, #7c3aed, #a855f7)',
-              boxShadow: `
-        4px 4px 10px rgba(0,0,0,0.6),
-        -2px -2px 6px rgba(168,85,247,0.25)
-      `,
-            }}
-            onMouseEnter={e => {
-              e.currentTarget.style.boxShadow = `
-        inset 2px 2px 6px rgba(0,0,0,0.6),
-        inset -2px -2px 6px rgba(168,85,247,0.25)
-      `;
-            }}
-            onMouseLeave={e => {
-              e.currentTarget.style.boxShadow = `
-        4px 4px 10px rgba(0,0,0,0.6),
-        -2px -2px 6px rgba(168,85,247,0.25)
-      `;
-            }}
+            className="px-4 py-2 text-xs font-mono tracking-wide"
+            icon={<ArrowUpRight size={14} />}
           >
             Book a Call
-            <ArrowUpRight
-              size={14}
-              className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-            />
-          </a>
+          </NeumorphicCtaButton>
         </motion.div>
       </div>
     </div>
